@@ -23,4 +23,97 @@
 
 \maketitle
 
+\section*{Question 1}
+\begin{proof}
+    Define a function $f$ as:
+    \[ f: \mathbb{N} \rightarrow \{1,4,7,10,13,\cdots\}: n \rightarrowtail 3n-2 \]
+    Now we need to show $f$ is \textit{one to one} and \textit{onto}.
+    \begin{itemize}
+        \item Prove $f$ is \textit{one to one}
+        \begin{proof}
+            To prove $f$ is \textit{one to one}, we must show that if $f(n_1) = f(n_2)$, then $n_1 = n_2$.
+            \\
+            Suppose $f(n_1) = f(n_2)$. Then:
+            \[ 3n_1 - 2 = 3n_2 - 2 \]
+            \[ \Rightarrow 3n_1 = 3n_2 \Rightarrow n_1 = n_2\]
+            \\
+            Since $n_1 = n_2$, $f$ is injective.
+        \end{proof}
+        \item Prove $f$ is \textit{onto}
+        \begin{proof}
+            To prove $f$ is \textit{onto}, we need to show for every $m \in \{1,4,7,10,13,\cdots\}$, there exists an $n \in \mathbb{N}$ s.t. $f(n) = m$.
+            \\
+            Take any $m \in \{1,4,7,10,13,\cdots\}$. We want to find $n$ such that $3n-2 = m$. Solving for $n$:
+            \[ 3n-2 = m \Rightarrow 3n = m + 2 \Rightarrow n = \frac{m+2}{3} \]
+            \\
+            Since $m$ is of the form $3k-2$ for some integer $k$, and $n=k$ is an integer. Therefore, $n \in \mathbb{N}$, and $f$ is onto.
+        \end{proof}
+        Since $f$ is \textit{one to one} and \textit{onto}, it is a bijection. Hence, $f(n) = 3n - 2$ is a explicit bijection from the set $\mathbb{N}$ to $\{1,4,7,10,13,\cdots\}$.
+    \end{itemize}
+\end{proof}
+
+\section*{Question 2}
+\begin{proof}
+    Define a function $f$ as:
+    \[ f: (0,1) \rightarrow \mathbb{R}_{>0}: n \rightarrowtail \frac{n}{1-n} \]
+    Now we need to show $f$ is \textit{one to one} and \textit{onto}.
+    \begin{itemize}
+        \item Prove $f$ is \textit{one to one}
+        \begin{proof}
+            To prove $f$ is \textit{one to one}, we must show that if $f(n_1) = f(n_2)$, then $n_1 = n_2$.
+            \\
+            Suppose $f(n_1) = f(n_2)$. Then:
+            \[ \frac{n_1}{1 - n_1} = \frac{n_2}{1 - n_2} \]
+            \[ \Rightarrow x_1(1-x_2) = x_2(1-x_1) \]
+            \[ \Rightarrow x_1 - x_1x_2 = x_2 - x_2x_1 \]
+            \[ \Rightarrow x_1 = x_2 \]
+            \\
+            Thus, $f$ is one to one.
+        \end{proof}
+        \item Prove $f$ is \textit{onto}
+        \begin{proof}
+            To prove $f$ is \textit{onto}, we need to show for every $m \in \mathbb{R}_{>0}$, there exists an $n \in (0,1)$ s.t. $f(n) = m$.
+            \\
+            Take any $m > 0$. We want to find $n$ such that $\frac{n}{1 - n} = m$. Solving for $n$:
+            \[ n = m(1 - n) \Rightarrow n + nm = m \Rightarrow n(1 + m) = m \Rightarrow n = \frac{m}{1 + m} \]
+            Note that $m > 0$, this implies $0 < \frac{m}{1 + m} < 1$, hence $n \in (0,1)$.
+            \\
+            Thus, for every $m > 0$, there is an $n \in (0,1)$ s.t. $f(n) = m$. (i.e. $f$ is onto)
+        \end{proof}
+        Since $f$ is \textit{one to one} and \textit{onto}, it is a bijection. Hence, $f(n) = \frac{n}{1-n}$ is a explicit bijection from the set $(0,1)$ to $\mathbb{R}_{>0}$.
+    \end{itemize}
+\end{proof}
+
+\section*{Question 3}
+\begin{proof}
+    Define a function $f$ as:
+    \[ f: (0,1) \rightarrow \mathbb{R}_{>0}: n \rightarrowtail \frac{n}{1-n} \]
+    Now we need to show $f$ is \textit{one to one} and \textit{onto}.
+    \begin{itemize}
+        \item Prove $f$ is \textit{one to one}
+        \begin{proof}
+            To prove $f$ is \textit{one to one}, we must show that if $f(n_1) = f(n_2)$, then $n_1 = n_2$.
+            \\
+            Suppose $f(n_1) = f(n_2)$. Then:
+            \[ \frac{n_1}{1 - n_1} = \frac{n_2}{1 - n_2} \]
+            \[ \Rightarrow x_1(1-x_2) = x_2(1-x_1) \]
+            \[ \Rightarrow x_1 - x_1x_2 = x_2 - x_2x_1 \]
+            \[ \Rightarrow x_1 = x_2 \]
+            \\
+            Thus, $f$ is one to one.
+        \end{proof}
+        \item Prove $f$ is \textit{onto}
+        \begin{proof}
+            To prove $f$ is \textit{onto}, we need to show for every $m \in \mathbb{R}_{>0}$, there exists an $n \in (0,1)$ s.t. $f(n) = m$.
+            \\
+            Take any $m > 0$. We want to find $n$ such that $\frac{n}{1 - n} = m$. Solving for $n$:
+            \[ n = m(1 - n) \Rightarrow n + nm = m \Rightarrow n(1 + m) = m \Rightarrow n = \frac{m}{1 + m} \]
+            Note that $m > 0$, this implies $0 < \frac{m}{1 + m} < 1$, hence $n \in (0,1)$.
+            \\
+            Thus, for every $m > 0$, there is an $n \in (0,1)$ s.t. $f(n) = m$. (i.e. $f$ is onto)
+        \end{proof}
+        Since $f$ is \textit{one to one} and \textit{onto}, it is a bijection. Hence, $f(n) = \frac{n}{1-n}$ is a explicit bijection from the set $(0,1)$ to $\mathbb{R}_{>0}$.
+    \end{itemize}
+\end{proof}
+
 \end{document}
