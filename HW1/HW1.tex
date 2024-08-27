@@ -86,34 +86,74 @@
 
 \section*{Question 3}
 \begin{proof}
-    Define a function $f$ as:
-    \[ f: (0,1) \rightarrow \mathbb{R}_{>0}: n \rightarrowtail \frac{n}{1-n} \]
-    Now we need to show $f$ is \textit{one to one} and \textit{onto}.
+    Modified the function $f$ from Q2 to $g$ as:
+    \[ g: [0,1) \rightarrow \mathbb{R}_{>0} 
+    : g(x) =
+        \begin{cases}
+            \frac{x}{1-x}, & \text{if } x \in (0, 1) \\
+            a, & \text{if } x = 0
+        \end{cases}
+    \]
+    Where $a \in \mathbb{R}_{+}$ and is not in the range of $f(x)$ for $x \in (0,1)$.
+    \\
+    Now we need to show $g$ is \textit{one to one} and \textit{onto}.
     \begin{itemize}
-        \item Prove $f$ is \textit{one to one}
+        \item Prove $g$ is \textit{one to one}
         \begin{proof}
-            To prove $f$ is \textit{one to one}, we must show that if $f(n_1) = f(n_2)$, then $n_1 = n_2$.
+            To prove $g$ is \textit{one to one}, we must show that if $g(x_1) = g(x_2)$, then $x_1 = x_2$.
             \\
-            Suppose $f(n_1) = f(n_2)$. Then:
-            \[ \frac{n_1}{1 - n_1} = \frac{n_2}{1 - n_2} \]
-            \[ \Rightarrow x_1(1-x_2) = x_2(1-x_1) \]
-            \[ \Rightarrow x_1 - x_1x_2 = x_2 - x_2x_1 \]
-            \[ \Rightarrow x_1 = x_2 \]
-            \\
-            Thus, $f$ is one to one.
+            \begin{itemize}
+                \item If $x_1, x_2 \in (0,1)$, then from Q2, $\frac{x_1}{1-x_1} = \frac{x_2}{1-x_2}$ implies $x_1 = x_2$
+                \item If $x_1 = 0$ and $x_2 \in (0,1)$, then $g(0) = a, g(x_2) = \frac{x_2}{1-x_2}$, but $a \neq \frac{x_2}{1-x_2}, \forall x_2 \in (0,1)$.
+                Thus, $g(x_1) \neq g(x_2)$ andit it is one to one.
+            \end{itemize}
         \end{proof}
-        \item Prove $f$ is \textit{onto}
+        \item Prove $g$ is \textit{onto}
         \begin{proof}
-            To prove $f$ is \textit{onto}, we need to show for every $m \in \mathbb{R}_{>0}$, there exists an $n \in (0,1)$ s.t. $f(n) = m$.
+            To prove $g$ is \textit{onto}, we need to show for every $y \in \mathbb{R}_{>0}$, there exists an $x \in (0,1)$ s.t. $g(x) = y$.
             \\
-            Take any $m > 0$. We want to find $n$ such that $\frac{n}{1 - n} = m$. Solving for $n$:
-            \[ n = m(1 - n) \Rightarrow n + nm = m \Rightarrow n(1 + m) = m \Rightarrow n = \frac{m}{1 + m} \]
-            Note that $m > 0$, this implies $0 < \frac{m}{1 + m} < 1$, hence $n \in (0,1)$.
-            \\
-            Thus, for every $m > 0$, there is an $n \in (0,1)$ s.t. $f(n) = m$. (i.e. $f$ is onto)
+            \begin{itemize}
+                \item For $y \neq a$, there exists an $x \in (0,1)$ s.t. $\frac{x}{1-x} = y$.
+                \item For $y = a$, we have $g(0) = a$.
+            \end{itemize}
+            Hence, $g(x)$ covers $\mathbb{R}_{+}$, which is onto.
         \end{proof}
-        Since $f$ is \textit{one to one} and \textit{onto}, it is a bijection. Hence, $f(n) = \frac{n}{1-n}$ is a explicit bijection from the set $(0,1)$ to $\mathbb{R}_{>0}$.
+        Since $g$ is \textit{one to one} and \textit{onto}, it is a bijection.
     \end{itemize}
+\end{proof}
+
+\section*{Question 4}
+\begin{proof}
+
+    \subsection*{(a) Show that $g \circ f$ is injective if both of $f$ and $g$ are injective.}
+
+    Given that $f : A \rightarrow B$ and $g : B \rightarrow C$ are injective. 
+    We can write $g \circ f$ as $g \circ f: A \rightarrow C$, defined as $(g \circ f)(x) = g(f(x))$.
+    \\
+    Assume: $(g \circ f)(x) = (g \circ f)(y), \ \text{for some $x,y \in A$} $, 
+    \begin{enumerate}
+        \item By the definition of composite function, we can get $g(f(x)) = g(f(y))$
+        \item Given, $g$ is injective, $f(x) = f(y)$
+        \item Also given, $f$ is injective, $x = y$
+    \end{enumerate}
+    \\
+    Hence, $g \circ f$ is injective. 
+    $\blacksquare$
+
+    \subsection*{(b) Show that $g \circ f$ is surjective if both of $f$ and $g$ are surjective.}
+
+    Given that $f : A \rightarrow B$ and $g : B \rightarrow C$ are surjective. 
+    We can write $g \circ f$ as $g \circ f: A \rightarrow C$, defined as $(g \circ f)(x) = g(f(x))$.
+    \\
+    Let an arbitary value $z \in C$. We need to find some $x \in A$ such that $(g \circ f)(x) = z$
+    \begin{enumerate}
+        \item Given g is surjective, hence there exists a $y \in B$ such that $g(y) = z$
+        \item Given f is surjective, hence there exists a $x \in B$ such that $f(x) = y$
+        \item Hence, $(g \circ f)(x) = g(f(x)) = g(y) = z$
+    \end{enumerate}
+    \\
+    Hence, $g \circ f$ is surjective. 
+    $\blacksquare$
 \end{proof}
 
 \end{document}
