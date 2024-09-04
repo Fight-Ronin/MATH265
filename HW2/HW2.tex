@@ -26,19 +26,34 @@
 \section*{Question 1}
 \begin{proof}
     First lets check the base case. For $n = 1$: 
-    \[ \frac{1}{\sqrt{1}} = 1 > \frac{1^{\frac{3}{2}}}{3} = \frac{1}{3} \]
-    Thus, the base case holds.
+    \[ \sum_{i=1}^{1} \frac{1}{\sqrt{i}} = \frac{1}{\sqrt{1}} = 1 \]
+    $1^{\frac{2}{3}} = 1$. Since $1 \geq 1$, the base case holds.
     \\
-    For forming up the inductive hypothesis, assume the statement is true for somme $n = k$, 
-    \[ \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} \geq \frac{k^{\frac{3}{2}}}{3} \]
+    For forming up the inductive hypothesis, assume the statement is true for some $k \geq 1$, 
+    \[ \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq k^{\frac{2}{3}}  \]
     \\
-    Now for the inductive step, we need to show the statement holds for $n = k + 1$,
-    \[  \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} + \frac{1}{\sqrt{k + 1}} \geq \frac{(k+1)^{\frac{3}{2}}}{3} \]
+    Now we need to show the statement holds for $k + 1$, namely, 
+    \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
     From inductive hypothesis, we can add $\frac{1}{\sqrt{k+1}}$ both side:
-    \[ \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} + \frac{1}{\sqrt{k + 1}} \geq \frac{(k)^{\frac{3}{2}}}{3} + \frac{1}{\sqrt{k + 1}} \]
-    \[ \]
+    \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \]
+    \\
+    Now we need to show:
+    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
+    \\
+    Using approximation of power functions (Taylor Expansion), we can approximate RHS: 
+    \[ (k + 1)^{\frac{2}{3}} \approx k^{\frac{2}{3}} + \frac{2}{3k^{\frac{1}{3}}} \]
+    \\
+    When $k$ is large, we can approximate LHS:
+    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \approx k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \]
+    \\
+    For, \( \frac{1}{k^{\frac{1}{2}}} \leq \frac{2}{3k^{\frac{1}{3}}} \) since the former diminishes slower. Hence,
+    \[ k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \geq k^{\frac{2}{3}} + \frac{2}{3 k^{\frac{2}{3}}} \Rightarrow k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
+    \\
+    By mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq n^{\frac{2}{3}} \) is true for all $n 
+    in \mathbb{N}$.
 \end{proof}
 
+\section*{Question 2}
 
 \end{document}
