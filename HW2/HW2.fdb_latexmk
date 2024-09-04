@@ -1,9 +1,11 @@
 # Fdb version 4
-["pdflatex"] 1725480021.4848 "c:/Users/yinha/Documents/MATH265/HW2/HW2.tex" "HW2.pdf" "HW2" 1725480022.23208 0
-  "HW2.aux" 1725480022 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "HW2.tex" 1725480020 2468 6781b2bf6f6b1a1076fa002b4330e447 ""
-  "c:/Users/yinha/Documents/MATH265/HW2/HW2.tex" 1725480020 2468 6781b2bf6f6b1a1076fa002b4330e447 ""
+["pdflatex"] 1725488419.82716 "c:/Users/yinha/Documents/MATH265/HW2/HW2.tex" "HW2.pdf" "HW2" 1725488420.57583 0
+  "HW2.aux" 1725488420 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "HW2.tex" 1725488419 6504 3c752c72aad80ca6acf803e9315d1951 ""
+  "c:/Users/yinha/Documents/MATH265/HW2/HW2.tex" 1725488419 6504 3c752c72aad80ca6acf803e9315d1951 ""
+  "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1707422284 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1707423307 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1707422816 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1707421856 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1707421856 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1707421856 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -38,6 +40,7 @@
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1707421856 32716 08e384dc442464e7285e891af9f45947 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1707421856 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1707421856 34694 870c211f62cb72718a00e353f14f254d ""
+  "c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1707422284 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "c:/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1707425294 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1707425893 1016 1c2b89187d12a2768764b83b4945667c ""
   "c:/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1707425893 43820 1fef971b75380574ab35a0d37fd92608 ""
@@ -103,6 +106,7 @@
   "c:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty" 1707421858 2444 0d0c1ee65478277e8015d65b86983da2 ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/article.cls" 1707424306 20144 147463a6a579f4597269ef9565205cfe ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty" 1707424306 5048 425739d70251273bf93e3d51f3c40048 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/base/omscmr.fd" 1707424306 2469 74341109f164f230581718c66211c718 ""
   "c:/texlive/2023/texmf-dist/tex/latex/base/size10.clo" 1707424306 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1707422951 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1707423697 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
