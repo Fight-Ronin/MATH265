@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{amssymb}
+\newcommand*{\twoheadrightarrowtail}{\mathrel{\rightarrowtail\kern-1.9ex\twoheadrightarrow}}
+% Alternative which doesn't look as good using the normal size, but might work better with smaller sizes too:
+%\newcommand*{\twoheadrightarrowtail}{\mathrel{\rlap{$\rightarrowtail$}\twoheadrightarrow}}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{dcolumn}
+\newcolumntype{2}{D{.}{}{2.0}}
+
+\title{MATH 265 HW2}
+\author{Hanzhang Yin}
+\date{Sep/4/2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+\begin{proof}
+    First lets check the base case. For $n = 1$: 
+    \[ \frac{1}{\sqrt{1}} = 1 > \frac{1^{\frac{3}{2}}}{3} = \frac{1}{3} \]
+    Thus, the base case holds.
+    \\
+    For forming up the inductive hypothesis, assume the statement is true for somme $n = k$, 
+    \[ \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} \geq \frac{k^{\frac{3}{2}}}{3} \]
+    \\
+    Now for the inductive step, we need to show the statement holds for $n = k + 1$,
+    \[  \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} + \frac{1}{\sqrt{k + 1}} \geq \frac{(k+1)^{\frac{3}{2}}}{3} \]
+    \\
+    From inductive hypothesis, we can add $\frac{1}{\sqrt{k+1}}$ both side:
+    \[ \frac{1}{\sqrt{1}} + \frac{1}{\sqrt{2}} + \cdots + \frac{1}{\sqrt{k}} + \frac{1}{\sqrt{k + 1}} \geq \frac{(k)^{\frac{3}{2}}}{3} + \frac{1}{\sqrt{k + 1}} \]
+    \[ \]
+\end{proof}
+
+
+\end{document}
