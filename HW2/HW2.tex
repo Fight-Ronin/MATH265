@@ -42,7 +42,7 @@
     Now we need to show:
     \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
-    Using approximation of power functions (Taylor Expansion), we can approximate RHS: 
+    Using an approximation of power functions (Taylor Expansion), we can approximate RHS ($O \left( \frac{1}{k^{\frac{1}{3}}} \right)$ is the higher order terms): 
     \[ (k + 1)^{\frac{2}{3}} = k^{\frac{2}{3}} + \frac{2}{3k^{\frac{1}{3}}} + \cdots + O \left( \frac{1}{k^{\frac{1}{3}}} \right) \geq k^{\frac{2}{3}} + \frac{2}{3} \frac{1}{k^{\frac{1}{3}}} \]
     \\
     When $k$ is large, we can approximate LHS w.r.t the rate of change of the function:
@@ -116,20 +116,20 @@
     \[ \mathbb{Z}_n := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
     In here, $\mathbb{Z}_n$ is finite. Then, $\forall P(x) \in \mathbb{Z}[x]$
     \[ Z[x] = \bigcup_{n=0}^{\infty} \mathbb{Z}_n \]
-    Finite union of countable set is countable, hence $Z[x]$ is countable.
+    The finite union of countable sets is countable, hence $Z[x]$ is countable.
     \\
     For each polynomial in set $Z[x]$, there exists at most $n$ roots, hence, we can denote the set of algebraic number $A$ as:
     \[ A = \bigcup_{n=0}^{\infty} \bigcup_{n=0}^{\infty} \mathbb{Z}_n =  \bigcup_{n=0}^{\infty} Z[x] \]
-    Again, since $Z[x]$ is countable, finite union of countable set is countable.
+    Again, since $Z[x]$ is countable, the finite union of the countable set is countable.
     \\
-    Therefore, algebraic numbers is countably infinite.
+    Therefore, algebraic numbers are countably infinite.
 \end{proof}
 
 \begin{comment}
 \begin{proof}
     Let $A_n$ := \{polynomials of degree $n$ over $\mathbb{Z}$\}
     \\
-    Since $\mathbb{Z}$ is countably infinite and product of countably infinite set is countably infinite, we want to show the bijection between:
+    Since $\mathbb{Z}$ is countably infinite and the product of a countably infinite set is countably infinite, we want to show the bijection between:
     \[ A_n \hookrightarrow \prod_{i=0}^{n}\mathbb{Z}_{i}: a_n x^n + \cdots + a_1 x + a_0 \mapsto (a_n, \cdots, a_1, a_0) \]
     
     \begin{itemize}
@@ -144,7 +144,7 @@
             By definition of tuple equality,
             \[ a_{n_1} = a_{n_2}, \cdots, a_{0_1} = a_{0_2}\]
             \\
-            Since the coefficient of $p(x_1)$ and $p(x_2)$ are identical, the function $A_n$ is injective.
+            Since the coefficients of $p(x_1)$ and $p(x_2)$ are identical, the function $A_n$ is injective.
         \end{proof}
         \item Prove $A_n$ is \textit{onto}
         \begin{proof}
