@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{multirow}
+\usepackage{verbatim} 
 \usepackage{dcolumn}
 \newcolumntype{2}{D{.}{}{2.0}}
 
@@ -36,21 +37,21 @@
     \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
     From inductive hypothesis, we can add $\frac{1}{\sqrt{k+1}}$ both side:
-    \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \]
+    \[ \sum_{i=1}^{k} \frac{1}{\sqrt{i}} + \frac{1}{\sqrt{k + 1}} \geq (k)^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \]
     \\
     Now we need to show:
     \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
     Using approximation of power functions (Taylor Expansion), we can approximate RHS: 
-    \[ (k + 1)^{\frac{2}{3}} \approx k^{\frac{2}{3}} + \frac{2}{3k^{\frac{1}{3}}} \]
+    \[ (k + 1)^{\frac{2}{3}} = k^{\frac{2}{3}} + \frac{2}{3k^{\frac{1}{3}}} + \cdots + O \left( \frac{1}{k^{\frac{1}{3}}} \right) \geq k^{\frac{2}{3}} + \frac{2}{3} \frac{1}{k^{\frac{1}{3}}} \]
     \\
-    When $k$ is large, we can approximate LHS:
-    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \approx k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \]
+    When $k$ is large, we can approximate LHS w.r.t the rate of change of the function:
+    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \]
     \\
-    For, \( \frac{1}{k^{\frac{1}{2}}} \leq \frac{2}{3k^{\frac{1}{3}}} \) since the former diminishes slower. Hence,
+    Note, \( \frac{1}{k^{\frac{1}{2}}} \leq \frac{2}{3k^{\frac{1}{3}}} \) since the former diminishes slower when $k$ is large. Hence,
     \[ k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \geq k^{\frac{2}{3}} + \frac{2}{3 k^{\frac{2}{3}}} \Rightarrow k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
-    By mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq n^{\frac{2}{3}} \) is true for all $n in \mathbb{N}$.
+    By mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq n^{\frac{2}{3}} \) is true for all $n \in \mathbb{N}$.
 \end{proof}
 
 \section*{Question 2}
@@ -105,6 +106,27 @@
 
 \section*{Question 4}
 \begin{proof}
+    Let $P(x) = a_nx^n + \cdots + a_1x + a_0$, define $\mathbb{Z}[x] \in P(X)$ s.t. $a_i \in \mathbb{Z}$
+    \\
+    Define height of $P(x)$ as:
+    \[ h(P) := n + \sum_{i = 0}^{n} |a_i| \]
+    The number of $P(x)$ satisfying $h(P) \leq c$ is finite.
+    \\
+    Hence we can define,
+    \[ \mathbb{Z}_n := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
+    In here, $\mathbb{Z}_n$ is finite. Then, $\forall P(x) \in \mathbb{Z}[x]$
+    \[ Z[x] = \bigcup_{n=0}^{\infty} \mathbb{Z}_n \]
+    Finite union of countable set is countable, hence $Z[x]$ is countable.
+    \\
+    For each polynomial in set $Z[x]$, there exists at most $n$ roots, hence, we can denote the set of algebraic number $A$ as:
+    \[ A = \bigcup_{n=0}^{\infty} \bigcup_{n=0}^{\infty} \mathbb{Z}_n =  \bigcup_{n=0}^{\infty} Z[x] \]
+    Again, since $Z[x]$ is countable, finite union of countable set is countable.
+    \\
+    Therefore, algebraic numbers is countably infinite.
+\end{proof}
+
+\begin{comment}
+\begin{proof}
     Let $A_n$ := \{polynomials of degree $n$ over $\mathbb{Z}$\}
     \\
     Since $\mathbb{Z}$ is countably infinite and product of countably infinite set is countably infinite, we want to show the bijection between:
@@ -139,5 +161,6 @@
     \\
     Therefore, algebraic numbers is countably infinite.
 \end{proof}
+\end{comment}
 
 \end{document}
