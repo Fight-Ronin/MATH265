@@ -40,17 +40,22 @@
     \[ \sum_{i=1}^{k} \frac{1}{\sqrt{i}} + \frac{1}{\sqrt{k + 1}} \geq (k)^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \]
     \\
     Now we need to show:
-    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
+    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \Rightarrow \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} - k^{\frac{2}{3}} \]
     \\
-    Using an approximation of power functions (Taylor Expansion), we can approximate RHS ($O \left( \frac{1}{k^{\frac{1}{3}}} \right)$ is the higher order terms): 
-    \[ (k + 1)^{\frac{2}{3}} = k^{\frac{2}{3}} + \frac{2}{3k^{\frac{1}{3}}} + \cdots + O \left( \frac{1}{k^{\frac{1}{3}}} \right) \geq k^{\frac{2}{3}} + \frac{2}{3} \frac{1}{k^{\frac{1}{3}}} \]
+    Let, $f(k) = (k + 1)^{-\frac{1}{2}} - (k + 1)^{\frac{2}{3}} + k^{\frac{2}{3}}$:
+    \[ f'(k) = -\frac{1}{2}(k + 1)^{-\frac{3}{2}} - \frac{2}{3}(k + 1)^{-\frac{1}{3}} + \frac{2}{3}(k)^{-\frac{1}{3}} \]
     \\
-    When $k$ is large, we can approximate LHS w.r.t the rate of change of the function:
-    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \]
+    As $k \rightarrow \infty$, since all three terms are converging to $0$, $f'(k) \rightarrow 0$. 
+    \[ f''(k) = \frac{3}{4}(k + 1)^{-\frac{5}{2}} + \frac{2}{9}(k + 1)^{-\frac{4}{3}} - \frac{2}{9}(k)^{-\frac{4}{3}} \]
     \\
-    Note, \( \frac{1}{k^{\frac{1}{2}}} \leq \frac{2}{3k^{\frac{1}{3}}} \) since the former diminishes slower when $k$ is large. Hence,
-    \[ k^{\frac{2}{3}} + \frac{1}{k^{\frac{1}{2}}} \geq k^{\frac{2}{3}} + \frac{2}{3 k^{\frac{2}{3}}} \Rightarrow k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
+    For $k \geq 1$, noting that $\frac{2}{9}(k + 1)^{-\frac{4}{3}} - \frac{2}{9}(k)^{-\frac{4}{3}} \geq 0$, hence $f''(k) \geq 0$.
     \\
+    Since $k \rightarrow \infty, f'(k) \rightarrow 0$ and $f''(0) \geq 0$. This indicates $f'(k) < 0$ for all $k \geq 1$. Hence the function $f(k)$ is decreasing for $k \geq 1$.
+    \\
+    Referring back to $f(k)$, we can approximate its behavior using taylor series:
+    \[ f(k) = (k + 1)^{-\frac{1}{2}} - \left[ (k + 1)^{\frac{2}{3}} + k^{\frac{2}{3}} \right] = (k + 1)^{-\frac{1}{2}} - \frac{2}{3}(k - 1)^{\frac{1}{3}} + O(k^{-\frac{4}{3}}) \]
+    \\
+    Hence, when $k \rightarrow +\infty, f(k) \geq 0 \Rightarrow \forall k \geq 1, f(k) \geq 0$. The original inquality holds for all $k \geq 0$.
     By mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq n^{\frac{2}{3}} \) is true for all $n \in \mathbb{N}$.
 \end{proof}
 
@@ -106,7 +111,7 @@
 
 \section*{Question 4}
 \begin{proof}
-    Let $P(x) = a_nx^n + \cdots + a_1x + a_0$, define $\mathbb{Z}[x] \in P(X)$ s.t. $a_i \in \mathbb{Z}$
+    Let $P(x) = a_nx^n + \cdots + a_1x + a_0$, define $P(X) \in \mathbb{Z}[x]$ s.t. $a_i \in \mathbb{Z}$
     \\
     Define height of $P(x)$ as:
     \[ h(P) := n + \sum_{i = 0}^{n} |a_i| \]
@@ -114,13 +119,15 @@
     \\
     Hence we can define,
     \[ \mathbb{Z}_n := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
-    In here, $\mathbb{Z}_n$ is finite. Then, $\forall P(x) \in \mathbb{Z}[x]$
-    \[ Z[x] = \bigcup_{n=0}^{\infty} \mathbb{Z}_n \]
-    The finite union of countable sets is countable, hence $Z[x]$ is countable.
+    In here, $\mathbb{Z}_n$ is finite. Let $I$ be a countable set. Then, $\forall P(x) \in \mathbb{Z}[x]$
+    \[ Z[x] = \bigcup_{i \in I} P_i(x) \]
+    The countable union of finite sets is countable, hence $Z[x]$ is countable.
     \\
-    For each polynomial in set $Z[x]$, there exists at most $n$ roots, hence, we can denote the set of algebraic number $A$ as:
-    \[ A = \bigcup_{n=0}^{\infty} \bigcup_{n=0}^{\infty} \mathbb{Z}_n =  \bigcup_{n=0}^{\infty} Z[x] \]
-    Again, since $Z[x]$ is countable, the finite union of the countable set is countable.
+    For each polynomial $P_i(x) \in Z[x]$, there exists $n$ roots, hence, we can denote the element $A_i$ in the set of algebraic number $A$ as:
+    \[ A_i = \{ x: P_i(x) = 0\} \text{ s.t. } |A_i| = \deg(P_i) \]
+    Hence, $A_i$ is also countable since we can find a constant $c$ s.t. $|A_i| < c$.
+    \[ A = \bigcup_{i \in I} A_i \]
+    Again, since $A_i$ is countable, the countable union of the finite set is countable.
     \\
     Therefore, algebraic numbers are countably infinite.
 \end{proof}
