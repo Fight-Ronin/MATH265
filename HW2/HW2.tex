@@ -27,36 +27,27 @@
 \section*{Question 1}
 \begin{proof}
     First lets check the base case. For $n = 1$: 
-    \[ \sum_{i=1}^{1} \frac{1}{\sqrt{i}} = \frac{1}{\sqrt{1}} = 1 \]
+    \[ \sum_{i=1}^{1} \frac{1}{\sqrt[3]{i}} = \frac{1}{\sqrt[3]{1}} = 1 \]
     $1^{\frac{2}{3}} = 1$. Since $1 \geq 1$, the base case holds.
     \\
     For forming up the inductive hypothesis, assume the statement is true for some $k \geq 1$, 
-    \[ \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq k^{\frac{2}{3}}  \]
+    \[ \sum_{i=1}^{k} \frac{1}{\sqrt[3]{i}} \geq k^{\frac{2}{3}}  \]
     \\
     Now we need to show the statement holds for $k + 1$, namely, 
-    \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt{i}} \geq (k + 1)^{\frac{2}{3}} \]
+    \[ \sum_{i=1}^{k+1} \frac{1}{\sqrt[3]{i}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
     From inductive hypothesis, we can add $\frac{1}{\sqrt{k+1}}$ both side:
-    \[ \sum_{i=1}^{k} \frac{1}{\sqrt{i}} + \frac{1}{\sqrt{k + 1}} \geq (k)^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \]
+    \[ \sum_{i=1}^{k} \frac{1}{\sqrt[3]{i}} + \frac{1}{\sqrt[3]{k + 1}} \geq (k)^{\frac{2}{3}} + \frac{1}{\sqrt[3]{k + 1}} \]
     \\
     Now we need to show:
-    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} \Rightarrow \frac{1}{\sqrt{k + 1}} \geq (k + 1)^{\frac{2}{3}} - k^{\frac{2}{3}} \]
+    \[ k^{\frac{2}{3}} + \frac{1}{\sqrt[3]{k + 1}} \geq (k + 1)^{\frac{2}{3}} \]
     \\
-    Let, $f(k) = (k + 1)^{-\frac{1}{2}} - (k + 1)^{\frac{2}{3}} + k^{\frac{2}{3}}$:
-    \[ f'(k) = -\frac{1}{2}(k + 1)^{-\frac{3}{2}} - \frac{2}{3}(k + 1)^{-\frac{1}{3}} + \frac{2}{3}(k)^{-\frac{1}{3}} \]
+    By factorization, we can get:
+    \[ \Rightarrow \frac{k}{\sqrt[3]{k}} + \frac{1}{\sqrt[3]{k + 1}} \geq \frac{k}{\sqrt[3]{k + 1}} + \frac{1}{\sqrt[3]{k + 1}} > (k + 1)^{\frac{2}{3}} \]
     \\
-    As $k \rightarrow \infty$, since all three terms are converging to $0$, $f'(k) \rightarrow 0$. 
-    \[ f''(k) = \frac{3}{4}(k + 1)^{-\frac{5}{2}} + \frac{2}{9}(k + 1)^{-\frac{4}{3}} - \frac{2}{9}(k)^{-\frac{4}{3}} \]
+    Since $\frac{k}{\sqrt[3]{k}} > \frac{1}{\sqrt[3]{k + 1}}$ always holds as $k \in \mathbb{N}$.
     \\
-    For $k \geq 1$, noting that $\frac{2}{9}(k + 1)^{-\frac{4}{3}} - \frac{2}{9}(k)^{-\frac{4}{3}} \geq 0$, hence $f''(k) \geq 0$.
-    \\
-    Since $k \rightarrow \infty, f'(k) \rightarrow 0$ and $f''(0) \geq 0$. This indicates $f'(k) < 0$ for all $k \geq 1$. Hence the function $f(k)$ is decreasing for $k \geq 1$.
-    \\
-    Referring back to $f(k)$, we can approximate its behavior using taylor series:
-    \[ f(k) = (k + 1)^{-\frac{1}{2}} - \left[ (k + 1)^{\frac{2}{3}} + k^{\frac{2}{3}} \right] = (k + 1)^{-\frac{1}{2}} - \frac{2}{3}(k - 1)^{\frac{1}{3}} + O(k^{-\frac{4}{3}}) \]
-    \\
-    Hence, when $k \rightarrow +\infty, f(k) \geq 0 \Rightarrow \forall k \geq 1, f(k) \geq 0$. The original inquality holds for all $k \geq 0$.
-    By mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt{i}} \geq n^{\frac{2}{3}} \) is true for all $n \in \mathbb{N}$.
+    Hence, by mathematical induction, the statement \( \sum_{i=1}^{k} \frac{1}{\sqrt[3]{i}} \geq n^{\frac{2}{3}} \) is true for all $n \in \mathbb{N}$.
 \end{proof}
 
 \section*{Question 2}
@@ -78,14 +69,14 @@
 
 \section*{Question 3}
 \begin{proof}
-    First lets check the base case. For $k = 1$: 
+    First lets check the base case. For $k = 1$:
     \[ F_{m + 1} = F_{m - 1}F_1 + F_m F_2 \]
     \\
     By definition of Fibonacci Sequence, $F_1 = F_2 = 1$.
     \[ F_{m + 1} = F_{m - 1} + F_m \]
     This is true by definition, hence the base case proved.
     \\
-    Assume that for some $k \geq 1$, the given identity holds:
+    Using strong induction, assume the following statement is true for all Fibonacci Sequence up to $k$. (i.e.  $1, \cdots, k$)
     \[ F_{m + k} = F_{m - 1}F_k + F_m F_{k + 1} \]
     \\
     We need to prove that this statement holds for $k+1$, namely,
@@ -95,7 +86,7 @@
     \[ F_{k+2} = F_{k+1} + F_k \]
     \[ F_{m+k+1} = F_{m+k} + F_{m+k-1} \]
     \\
-    Substitute the values from the inductive hypothesis into $F_{m+k+1}$:
+    Substitute the values from the inductive hypothesis into the definition $F_{m+k+1}$:
     \[ F_{m+k+1} = (F_{m-1}F_k + F_mF_{k+1}) + (F_{m-1}F_{k-1} + F_mF_k) \]
     \\
     Combine and reorganize terms:
@@ -115,7 +106,7 @@
     \\
     Define height of $P(x)$ as:
     \[ h(P) := n + \sum_{i = 0}^{n} |a_i| \]
-    The number of $P(x)$ satisfying $h(P) \leq c$ is finite.
+    Let $c$ be an arbitary constant that is large enougth. The number of $P(x)$ satisfying $h(P) \leq c$ is finite.
     \\
     Hence we can define,
     \[ \mathbb{Z}_n := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
@@ -124,8 +115,8 @@
     The countable union of finite sets is countable, hence $Z[x]$ is countable.
     \\
     For each polynomial $P_i(x) \in Z[x]$, there exists $n$ roots, hence, we can denote the element $A_i$ in the set of algebraic number $A$ as:
-    \[ A_i = \{ x: P_i(x) = 0\} \text{ s.t. } |A_i| = \deg(P_i) \]
-    Hence, $A_i$ is also countable since we can find a constant $c$ s.t. $|A_i| < c$.
+    \[ A_i = \{ x: P_i(x) = 0 \text{ s.t. } |A_i| = \deg(P_i) \} \]
+    Hence, $A_i$ is also countable since we can find a constant $c$ again s.t. $|A_i| < c$.
     \[ A = \bigcup_{i \in I} A_i \]
     Again, since $A_i$ is countable, the countable union of the finite set is countable.
     \\
