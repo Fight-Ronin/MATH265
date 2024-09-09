@@ -104,19 +104,19 @@
 \begin{proof}
     Let $P(x) = a_nx^n + \cdots + a_1x + a_0$, define $P(X) \in \mathbb{Z}[x]$ s.t. $a_i \in \mathbb{Z}$
     \\
-    Define height of $P(x)$ as:
+    Define height of $P(x)$ as (by the given hint):
     \[ h(P) := n + \sum_{i = 0}^{n} |a_i| \]
     Let $c$ be an arbitary constant that is large enougth. The number of $P(x)$ satisfying $h(P) \leq c$ is finite.
     \\
     Hence we can define,
-    \[ \mathbb{Z}_n := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
-    In here, $\mathbb{Z}_n$ is finite. Let $I$ be a countable set. Then, $\forall P(x) \in \mathbb{Z}[x]$
-    \[ Z[x] = \bigcup_{i \in I} P_i(x) \]
+    \[ P_i(x) := \{ P(x) \in \mathbb{Z}[x]: h(P(x)) \leq n \} \]
+    In here, $P_i(x)$ is finite. Let $I$ be the countable index set and $i \in I$. Then, $\forall P(x) \in \mathbb{Z}[x]$
+    \[ \mathbb{Z}[x] = \bigcup_{i \in I} P_i(x) \]
     The countable union of finite sets is countable, hence $Z[x]$ is countable.
     \\
-    For each polynomial $P_i(x) \in Z[x]$, there exists $n$ roots, hence, we can denote the element $A_i$ in the set of algebraic number $A$ as:
+    For each polynomial $P_i(x) \in \mathbb{Z}[x]$, there exists at most $n$ roots, hence, we can denote the element $A_i$ in the set of algebraic number $A$ as:
     \[ A_i = \{ x: P_i(x) = 0 \text{ s.t. } |A_i| = \deg(P_i) \} \]
-    Hence, $A_i$ is also countable since we can find a constant $c$ again s.t. $|A_i| < c$.
+    Noting that $A_i$ is also countable since we can find a constant $c$ again s.t. $|A_i| < c$. Then we can denote $A$ as:
     \[ A = \bigcup_{i \in I} A_i \]
     Again, since $A_i$ is countable, the countable union of the finite set is countable.
     \\
