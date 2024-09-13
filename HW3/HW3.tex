@@ -25,5 +25,68 @@
 \maketitle
 
 \section*{Question 1}
+\begin{proof}
+    proof by contradiction: suppose $a < b$.
+    \\
+    By assumption, we have $a \leq b - \epsilon$, for all $\epsilon > 0$.
+    \\
+    define the differences $d$ as $d = b - a$. Since $a < B$, by definition, $d = b - a \in \mathbb{P} > 0$.
+    \\
+    Now we pick $\epsilon = \frac{d}{2}$. Since $d > 0$, $\epsilon = \frac{d}{2} > 0$.
+    \\
+    We know that:
+    \[ a \leq b - \epsilon \]
+    Sub $\epsilon = \frac{d}{2}$ in, we get:
+    \[ a \leq b - \frac{d}{2} \]
+    Rewrite the expression in terms of $a$ and $b$ (Note: $d = b - a$):
+    \[ a \leq b - \frac{b - a}{2} \Rightarrow a \leq \frac{2b - (b - a)}{2} = \frac{b + a}{2} \]
+    Multiply both side by 2 (using A2 and M1), we get:
+    \[ 2a \geq b + a \]
+    Then, use the A4, subtract $a$ from both sides:
+    \[ 2a - a \geq b + a - a \]
+    Then, use A1 and A3, we can get:
+    \[ a \geq b + (a - a) \Rightarrow a \geq b + 0 \rightarrow a \geq b \]
+    Hence we derived a contradiction. Using the field axioms, the given condition implies $a \geq b$.
+\end{proof}
+
+\section*{Question 2}
+\begin{proof}
+    Recall the hint that:
+    \[ a^2 - b^2 = (a + b)(a - b) \]
+    Sub $b = -a$ into the identity, we can get:
+    \[ a^2 - (-a^2) = (a + (-a))(a - (-a)) \]
+    Using the axoim of additive inverses (A4): $a + (-a) = 0$.
+    \[ \Rightarrow a^2 - (-a^2) = (0)(a - (-a)) \]
+    By the Theorem of we know that $a \cdot 0 = 0$ for any $x \in \mathbb{R}$. Thus we have,
+    \[ \Rightarrow a^2 - (-a^2) = 0 \Rightarrow a^2  = (-a^2) \]
+\end{proof}
+
+\section*{Question 3}
+\begin{proof}
+    we want to prove:
+    \[ \left( \frac{1}{2} (a + b)^2 \right) \leq \frac{1}{2} (a^2 + b^2) \]
+    iff for all $a,b \in \mathbb{R}$, $a = b$.
+    \\
+    First using axiom D (distributive property) twice, we can expand LHS:
+    \[ \left( \frac{1}{2} (a + b)^2 \right) = \frac{1}{4}(a + b)^2 = \frac{1}{4}(a^2 + 2ab + b^2) \]
+    \\
+    Now we reform the inequality and WTS that:
+    \[ \frac{1}{4}(a^2 + 2ab + b^2) \leq \frac{1}{2} (a^2 + b^2) \]
+    Multiply both sides by 4, then use M2, we can get:
+    \[ (\frac{1}{4} \cdot 4) \cdot (a^2 + 2ab + b^2) \leq (\frac{1}{4} \cdot \frac{1}{2}) \cdot (a^2 + b^2) \Rightarrow a^2 + 2ab + b^2 \leq 2(a^2 + b^2) \]
+    Now we can rearrange terms using A1, A2, and D axiom:
+    \[ a^2 + 2ab + b^2 \leq 2a^2 + 2b^2 \Rightarrow a^2 + 2ab + b^2 - 2a^2 - 2b^2 \leq 0 \]
+    This simplifies to:
+    \[ \Rightarrow -a^2 + 2ab - b^2 \leq 0 \]
+    By D axiom again, we can factor out the (-1) as:
+    \[ \Rightarrow (-1)(a^2 - 2ab + b^2) \leq 0 \]
+    We know that \( a^2 - 2ab + b^2 = (a - b)^2 \), hence:
+    \[ \Rightarrow (-1)(a - b)^2 \leq 0 \]
+    Noting that since $(a - b)^2 \geq 0$, for any $a,b \in \mathbb{R}$, by A4, its additive inverse $(-1)(a - b)^2 \leq 0$ must also hold.
+    \\
+    Hence, we can get this equality that:
+    \[ (a - b)^2 = 0 \Rightarrow a - b = 0 \Rightarrow  a = b \]
+    Therefore, the inequality $\left( \frac{1}{2} (a + b)^2 \right) \leq \frac{1}{2} (a^2 + b^2)$ holds iff $a = b$ s.t. $a,b \in \mathbb{R}$.
+\end{proof}
 
 \end{document}
