@@ -28,25 +28,25 @@
 \begin{proof}
     proof by contradiction: suppose $a < b$.
     \\
-    By assumption, we have $a \leq b - \epsilon$, for all $\epsilon > 0$.
+    By assumption, we have $a \geq b - \epsilon$, for all $\epsilon > 0$.
     \\
-    define the differences $d$ as $d = b - a$. Since $a < B$, by definition, $d = b - a \in \mathbb{P} > 0$.
+    define $d = b - a$. Since $a < b$, by definition, $d = b - a \in \mathbb{P} > 0$.
     \\
     Now we pick $\epsilon = \frac{d}{2}$. Since $d > 0$, $\epsilon = \frac{d}{2} > 0$.
     \\
     We know that:
-    \[ a \leq b - \epsilon \]
+    \[ a \geq b - \epsilon \]
     Sub $\epsilon = \frac{d}{2}$ in, we get:
-    \[ a \leq b - \frac{d}{2} \]
+    \[ a \geq b - \frac{d}{2} \]
     Rewrite the expression in terms of $a$ and $b$ (Note: $d = b - a$):
-    \[ a \leq b - \frac{b - a}{2} \Rightarrow a \leq \frac{2b - (b - a)}{2} = \frac{b + a}{2} \]
+    \[ a \geq b - \frac{b - a}{2} \Rightarrow a \geq \frac{2b - (b - a)}{2} = \frac{b + a}{2} \]
     Multiply both side by 2 (using A2 and M1), we get:
     \[ 2a \geq b + a \]
     Then, use the A4, subtract $a$ from both sides:
     \[ 2a - a \geq b + a - a \]
     Then, use A1 and A3, we can get:
     \[ a \geq b + (a - a) \Rightarrow a \geq b + 0 \rightarrow a \geq b \]
-    Hence we derived a contradiction. Using the field axioms, the given condition implies $a \geq b$.
+    Hence we derived a contradiction. Using the field axioms, the given assumption implies $a \geq b$.
 \end{proof}
 
 \newpage

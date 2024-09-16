@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1726246661.03633 "c:/Users/yinha/Documents/MATH265/HW3/HW3.tex" "HW3.pdf" "HW3" 1726246661.81482 0
-  "HW3.aux" 1726246661 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "HW3.tex" 1726246660 3942 bb25db4458c8b6cfb54f031ace146e68 ""
-  "c:/Users/yinha/Documents/MATH265/HW3/HW3.tex" 1726246660 3942 bb25db4458c8b6cfb54f031ace146e68 ""
+["pdflatex"] 1726514764.19985 "c:/Users/yinha/Documents/MATH265/HW3/HW3.tex" "HW3.pdf" "HW3" 1726514764.9482 0
+  "HW3.aux" 1726514764 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "HW3.tex" 1726514763 3920 f6c18700702143a70ddeb7591f4ef9d0 ""
+  "c:/Users/yinha/Documents/MATH265/HW3/HW3.tex" 1726514763 3920 f6c18700702143a70ddeb7591f4ef9d0 ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1707423307 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1707421856 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1707421856 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -130,7 +130,7 @@
   "c:/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty" 1707428376 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "c:/texlive/2023/texmf-dist/web2c/texmf.cnf" 1707421791 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1707428605 5518052 de2a91c664d75f3971de4662dc6b5a65 ""
-  "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1707428714 8211064 7d8e4487f7fb5dfb1566bdc27a158ca8 ""
+  "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1726258801 8211078 06bfeca4e94a8218a2a5407b0723c67e ""
   "c:/texlive/2023/texmf.cnf" 1707428587 713 e69b156964470283e0530f5060668171 ""
   (generated)
   "HW3.aux"
