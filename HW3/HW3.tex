@@ -1,4 +1,4 @@
-  \documentclass{article}
+\documentclass{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -67,9 +67,9 @@
 
 \section*{Question 3}
 \begin{proof}
-    we want to prove:
+    First, we want to prove:
     \[ \left( \frac{1}{2} (a + b) \right)^2 \leq \frac{1}{2} (a^2 + b^2) \]
-    iff for all $a,b \in \mathbb{R}$, $a = b$.
+    for all $a,b \in \mathbb{R}$.
     \\
     First using axiom D (distributive property) twice, we can expand LHS:
     \[ \left( \frac{1}{2} (a + b) \right)^2 = \frac{1}{4}(a + b)^2 = \frac{1}{4}(a^2 + 2ab + b^2) \]
@@ -86,11 +86,12 @@
     \[ \Rightarrow (-1)(a^2 - 2ab + b^2) \leq 0 \]
     We know that \( a^2 - 2ab + b^2 = (a - b)^2 \), hence:
     \[ \Rightarrow (-1)(a - b)^2 \leq 0 \]
-    Noting that since $(a - b)^2 \geq 0$, for any $a,b \in \mathbb{R}$, by A4, its additive inverse $(-1)(a - b)^2 \leq 0$ must also hold.
+    Therefore, the inequality always holds for $a, b \in \mathbb{R}$.
     \\
-    Hence, we can get this equality that:
-    \[ (a - b)^2 = 0 \Rightarrow a - b = 0 \Rightarrow  a = b \]
-    Therefore, the inequality $\left( \frac{1}{2} (a + b) \right)^2 \leq \frac{1}{2} (a^2 + b^2)$ holds iff for all $a,b \in \mathbb{R}$, $a = b$.
+    Then we want to show this equality holds iff $a = b$.
+    Noting that since $(a - b)^2 \geq 0$, for any $a,b \in \mathbb{R}$, by A4, its additive inverse $(-1)(a - b)^2 \leq 0$ must also hold. Since we have simplified \(\left( \frac{1}{2} (a + b) \right)^2 \leq \frac{1}{2} (a^2 + b^2) \) to \( (-1)(a - b)^2 \leq 0 \). Hence,
+    \[ (a - b)^2 = 0 \Leftrightarrow a - b = 0 \Leftrightarrow  a = b \]
+    Therefore, the given inequality holds if and only if for $a = b$.
 \end{proof}
 
 \end{document}
