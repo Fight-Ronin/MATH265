@@ -28,8 +28,6 @@
 \begin{proof}
     Given \( w \) is a lower bound of \( S \), by definition:
     \[ w \leq s, \quad \forall s \in S. \]
-    Since \( w \in S \), there exists a \(s \in S\) s.t. \( s = w \). Then,
-    \[ w \leq s = w \implies w = s. \]
     Suppose there exists another lower bound \( v \in \mathbb{R} \) of \( S \) such that \( v > w \).
     However, since \( w \in S \), it must satisfy:
     \[ v \leq w. \]
@@ -39,19 +37,19 @@
 
 \section*{Question 2}
 \begin{proof}
-    First, we want to show $\inf(A) = m$ is an upper bound of $-A$.
+    First, we want to show $-\inf(A)$ is an upper bound of $-A$.
     \\
     Let $\inf(A) = m$, by definition of infimum, $m \leq a$ for all $a \in A$.
-    \[ \Rightarrow -m \geq -a, \forall a \in A \]
-    By our definition of set $-A$, this means $-\inf(A)$ is an upper bound of $-A$.
+    \[ \Rightarrow -m \geq -a, \forall -a \in -A \]
+    By our definition of set $-A$, $-\inf(A)$ is an upper bound of $-A$.
     \\
-    Following that, now we can show $-\inf(A)$ is the l.u.b of $-A$:
+    Following that, now we need to show $-\inf(A)$ is the l.u.b of $-A$:
     \\
     Assume there exists an upper bound $u \in -A$ s.t. $u < -\inf(A) = -m$. Then:
     \[ u < -m \rightarrow -u > m \]
     Since $\inf(A) = m$, for $\epsilon = -u - m > 0$, there exists $a_{\epsilon} \in A$ s.t. 
     \[ a_{\epsilon} < m + \epsilon = m + (-u - m) = -u \Rightarrow -a_{\epsilon} > u \]
-    Hence, $u$ is NOT an upper bound of $-A$, and $-m \leq u$ always. This shows that $-\inf(A) = \sup(-A)$.
+    Hence, $u$ is NOT an upper bound of $-A$, we derive a contradiction. This shows that $-\inf(A) = \sup(-A)$.
 \end{proof}
 
 \section*{Question 3}
@@ -61,7 +59,7 @@
     Since \( A \cap B \subseteq A \) and \( A \cap B \subseteq B \), any upper bound of \( A \) or \( B \) is also an upper bound of \( A \cap B \).
     \\
     Let \( \sup A = u \). By definition, \( u \) is the least upper bound of \( A \), hence \( u \) is an upper bound for \( A \cap B \).
-    Similarly, let \( \sup B = w \). Then \( w \) is an upper bound for \( A \cap B \).
+    Similarly, let \( \sup B = w \), then \( w \) is an upper bound for \( A \cap B \).
     \\
     Since \( \sup(A \cap B) \) is the least upper bound of \( A \cap B \), it must satisfy:
     \[ \sup(A \cap B) \leq u = \sup A \quad \text{and} \quad \sup(A \cap B) \leq w = \sup B. \]
