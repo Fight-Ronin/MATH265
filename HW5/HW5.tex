@@ -27,7 +27,120 @@
 \section*{Question 1}
 
 \subsection*{(a)}
+We can analysis this question by the parity of $n \in \mathbb{Z}_{+}$.
+\begin{enumerate}
+    \item When $n$ is odd, \((-1)^n = -1 \). Hence the term becomes:
+    \\
+    \[ - \left( 1 - \frac{1}{n} \right) = -1 + \frac{1}{n} \]
+    When $n \rightarrow \infty$:
+    \[ \frac{1}{n} \rightarrow 0 \Rightarrow -1 + \frac{1}{n} \rightarrow -1 \]
+    Hence, for all odd $n$, \( -1 + \frac{1}{n} < -1 \)
+    \item When $n$ is even, \((-1)^n = 1 \). Hence the term becomes:
+    \[ \left( 1 - \frac{1}{n} \right) = 1 - \frac{1}{n} \]
+    When $n \rightarrow \infty$:
+    \[ \frac{1}{n} \rightarrow 0 \Rightarrow 1 - \frac{1}{n} \rightarrow 1 \]
+    Hence, for all odd $n$, \( 1 - \frac{1}{n} \leq 1 \)
+\end{enumerate}
+Since every element $s \in S$, $s \leq 1$. By definition, $1$ is an upper bound of $S$.
+
+\subsection*{(b)}
+
+\begin{proof}
+    If $M$ is an upper bound for $S$, then $M \geq s$, for every element $s \in S$.
+    By our analysis in (a), it is sufficient to only consider the case when $n$ is even.
+    \\
+    Suppose $M < 1$ and $M$ is an upper bound of $S$.
+    \[ n \rightarrow \infty \Rightarrow 1 - \frac{1}{n} \rightarrow 1 \]. 
+    In this case, there exists a $s \in S$ s.t. $1 - \frac{1}{n} > M$ for some $n \in \mathbb{Z}_{+}$.
+    This derived a contradiction, hence $M \geq 1$. 
+\end{proof}
+
+\subsection*{(c)}
+\begin{proof}
+    From part (a), $1$ is am upper bound of $S$, and from part (b), no number less then $1$ can be an upper bound.
+    Thus by definition, the supremum of $S$ is $1$ (i.e. $\sup S = 1$).
+\end{proof}
 
 
+\section*{Quesiton 2}
+Noting that by definition \( A + B = \{ a + b | a \in A, b \in B \} \)
+
+\begin{proof}
+    First we need to show that \( \sup(A + B) \leq \sup A + \sup B \):
+    \\
+    let $a \in A$ and $b \in B$. By definition of supremum, we have $a \leq \sup A$ and $b \leq \sup B$.
+    \\
+    Therefore, for any $a \in A$ and $b \in B$:
+    \[ a + b \leq \sup A + \sup B \]
+    Since \( A + B = \{ a + b | a \in A, b \in B \} \), every element in $A + B$ is less than or equal to $\sup A + \sup B$.
+    Therefore, \( \sup \sup(A + B) \leq \sup A + \sup B \)
+    \\
+    Then we need to show \( \sup(A + B) \geq \sup A + \sup B \):
+    \\
+    Let $\epsilon > 0$, by definition of supremum, for set $A$ and $B$:
+    \begin{itemize}
+        \item \( \exists a_{\epsilon} \in A : \sup A - \epsilon < a_{\epsilon} < \sup A \)
+        \item \( \exists b_{\epsilon} \in B : \sup B - \epsilon < b_{\epsilon} < \sup B \)
+    \end{itemize}
+    Now consider $a_{\epsilon} + b_{\epsilon} \in A + B$. Then:
+    \[ (\sup A - \epsilon) + (\sup B - \epsilon) < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
+    \[ \Rightarrow \sup A + \sup B - 2 \epsilon < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
+    Noting that $\epsilon$ is arbitrary, as $\epsilon \rightarrow 0$:
+    \[ \Rightarrow \sup A + \sup B < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
+    Indicating $a_{\epsilon} + b_{\epsilon} \rightarrow \sup A + \sup B$
+    Thus, $\sup A + \sup B$ is the supremum of $A + B$, we get
+    \[ \sup A + \sup B \leq \sup (A + B) \]
+    By combining two steps, we have $\sup A + \sup B = \sup (A + B)$
+\end{proof}
+
+\subsection*{Question 3}
+
+\begin{proof}
+    Let $x > 1$ and consider the set $S = \{ x^n : n \in \mathbb{Z}_{+} \}$.
+    \\
+    For any $M \in \mathbb{R}$, we want to show that there exists $n \in \mathbb{Z}_{+}$ such that $x^n > M$
+    \\
+    Taking natural logarithm on both sides of the inequality $x^n > M$, we get:
+    \[ n \cdot \ln(x) > \ln(M) \]
+    Since $\ln(x) > 0$, noting $x > 1$, we can solve for $n$:
+    \[ n > \frac{\ln(M)}{\ln(x)} \]
+    Note that RHS is a constant, let $N = \lceil \frac{\ln(M)}{\ln(x)} \rceil + 1$,
+    \\
+    Hence, for $n = N$, we have:
+    \[ x^n > M \]
+    For any $M \in \mathbb{R}$, we can found $n \in \mathbb{Z}_{+}$ s.t. $x^n > M$. Thus, the set is not bounded from above.
+\end{proof}
+
+\subsection*{Question 4}
+For example:
+\[ I_n = \left[ 1 + \frac{1}{n}, 4 - \frac{1}{n} \right) \]
+For each positive integer $n$.
+\\
+Property verificaiton:
+\begin{proof}
+    \\
+    \textbf{Part 1:} We show that \(\displaystyle \bigcup_{n=1}^{\infty} I_n = (1, 4)\).
+    \\
+    \textit{(i) \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\)}:  
+    Let \( x \in \bigcup_{n=1}^{\infty} I_n \). Then \( x \in I_n \) for some \( n \), i.e., \( 1 + \frac{1}{n} \leq x < 4 - \frac{1}{n} \). Since \( \frac{1}{n} > 0 \), it follows that \( 1 < x < 4 \). Thus, \( x \in (1, 4) \), and hence \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\).
+    \\
+    \textit{(ii) \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\)}:  
+    Let \( x \in (1, 4) \). Define \( \epsilon = \min\{ x - 1, 4 - x \} > 0 \). Choose \( N \in \mathbb{N} \) such that \( \frac{1}{N} < \epsilon \). Then, for all \( n \geq N \), we have \( 1 + \frac{1}{n} < x < 4 - \frac{1}{n} \), so \( x \in I_n \). Thus, \( x \in \bigcup_{n=1}^{\infty} I_n \), and hence \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\).
+    \\
+    Combining (i) and (ii), we obtain \(\bigcup_{n=1}^{\infty} I_n = (1, 4)\).
+    
+    \medskip
+    
+    \textbf{Part 2:} We show that \(\displaystyle \bigcap_{n=1}^{\infty} I_n = [2, 3]\).
+    \\
+    \textit{(i) \([2, 3] \subseteq \bigcap_{n=1}^{\infty} I_n\)}:  
+    Let \( x \in [2, 3] \). For any \( n \in \mathbb{N} \), \( 1 + \frac{1}{n} \leq 2 \leq x \leq 3 \leq 4 - \frac{1}{n} \). Thus, \( x \in I_n \) for all \( n \), implying \( x \in \bigcap_{n=1}^{\infty} I_n \). Therefore, \([2, 3] \subseteq \bigcap_{n=1}^{\infty} I_n\).
+    \\
+    \textit{(ii) \(\bigcap_{n=1}^{\infty} I_n \subseteq [2, 3]\)}:  
+    Let \( x \in \bigcap_{n=1}^{\infty} I_n \). Then \( x \in I_n \) for all \( n \), i.e., \( 1 + \frac{1}{n} \leq x < 4 - \frac{1}{n} \) for all \( n \). As \( n \to \infty \), \( 1 + \frac{1}{n} \to 1 \) and \( 4 - \frac{1}{n} \to 4 \). Thus, \( x \geq 2 \) (since \( x \) cannot be less than 2 for all large \( n \)) and \( x \leq 3 \) (since \( x \) cannot be greater than 3 for all large \( n \)). Hence, \( x \in [2, 3] \).
+    \\
+    Combining (i) and (ii), we obtain \(\bigcap_{n=1}^{\infty} I_n = [2, 3]\).
+    
+    \end{proof}
 
 \end{document}
