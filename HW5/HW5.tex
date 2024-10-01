@@ -32,9 +32,9 @@ We can analysis this question by the parity of $n \in \mathbb{Z}_{+}$.
     \item When $n$ is odd, \((-1)^n = -1 \). Hence the term becomes:
     \\
     \[ - \left( 1 - \frac{1}{n} \right) = -1 + \frac{1}{n} \]
-    When $n \rightarrow \infty$:
-    \[ \frac{1}{n} \rightarrow 0 \Rightarrow -1 + \frac{1}{n} \rightarrow -1 \]
-    Hence, for all odd $n$, \( -1 + \frac{1}{n} < -1 \)
+    Noticing that for all $n$, $\frac{1}{n} \leq 1$, hence: 
+    \[ -1 + \frac{1}{n} \leq 0 \]
+    Hence, for all odd $n$, \( s \leq 0, s \in S \).
     \item When $n$ is even, \((-1)^n = 1 \). Hence the term becomes:
     \[ \left( 1 - \frac{1}{n} \right) = 1 - \frac{1}{n} \]
     When $n \rightarrow \infty$:
@@ -47,12 +47,15 @@ Since every element $s \in S$, $s \leq 1$. By definition, $1$ is an upper bound 
 
 \begin{proof}
     If $M$ is an upper bound for $S$, then $M \geq s$, for every element $s \in S$.
-    By our analysis in (a), it is sufficient to only consider the case when $n$ is even.
     \\
-    Suppose $M < 1$ and $M$ is an upper bound of $S$.
-    \[ n \rightarrow \infty \Rightarrow 1 - \frac{1}{n} \rightarrow 1 \]. 
-    In this case, there exists a $s \in S$ s.t. $1 - \frac{1}{n} > M$ for some $n \in \mathbb{Z}_{+}$.
-    This derived a contradiction, hence $M \geq 1$. 
+    Suppose $M < 1$ and $M$ is an upper bound of $S$, it is sufficient for us to only consider the case where $n$ is even.
+    \\
+    Since \( \frac{1}{2(1-M)} < 0 \), by Archimedes Property, \( \exists n \in \mathbb{N} \) s.t. \( \frac{1}{2(1-M)} < n \), we can get:
+    \[ \frac{1}{2(1-M)} < n \Rightarrow \frac{1}{1 - M} < 2n \Rightarrow 1 < 2n(1 - M) \Rightarrow \frac{1}{2n} < 1 - M \Rightarrow M < 1 - \frac{1}{2n} \]
+    In this case, we know that for $n$ is even,
+    \[ M < 1 - \frac{1}{2n} = (1 - \frac{1}{2n})(-1)^{2n} \]
+    Hence, there exists a $s \in S$ s.t. $M < (1 - \frac{1}{2n})(-1)^{2n}$ for some $n \in \mathbb{Z}_{+}$.
+    This derived a contradiction, hence $M \geq 1$.
 \end{proof}
 
 \subsection*{(c)}
@@ -63,7 +66,7 @@ Since every element $s \in S$, $s \leq 1$. By definition, $1$ is an upper bound 
 
 
 \section*{Quesiton 2}
-Noting that by definition \( A + B = \{ a + b | a \in A, b \in B \} \)
+Noting that by definition \( A + B = \{ a + b \ | \ a \in A, b \in B \} \)
 
 \begin{proof}
     First we need to show that \( \sup(A + B) \leq \sup A + \sup B \):
@@ -72,10 +75,10 @@ Noting that by definition \( A + B = \{ a + b | a \in A, b \in B \} \)
     \\
     Therefore, for any $a \in A$ and $b \in B$:
     \[ a + b \leq \sup A + \sup B \]
-    Since \( A + B = \{ a + b | a \in A, b \in B \} \), every element in $A + B$ is less than or equal to $\sup A + \sup B$.
-    Therefore, \( \sup \sup(A + B) \leq \sup A + \sup B \)
+    Since \( A + B = \{ a + b \ | \ a \in A, b \in B \} \), every element in $A + B$ is less than or equal to $\sup A + \sup B$.
+    Therefore, \( \sup(A + B) \leq \sup A + \sup B \).
     \\
-    Then we need to show \( \sup(A + B) \geq \sup A + \sup B \):
+    Then we can derived the equality from here:
     \\
     Let $\epsilon > 0$, by definition of supremum, for set $A$ and $B$:
     \begin{itemize}
@@ -83,14 +86,13 @@ Noting that by definition \( A + B = \{ a + b | a \in A, b \in B \} \)
         \item \( \exists b_{\epsilon} \in B : \sup B - \epsilon < b_{\epsilon} < \sup B \)
     \end{itemize}
     Now consider $a_{\epsilon} + b_{\epsilon} \in A + B$. Then:
-    \[ (\sup A - \epsilon) + (\sup B - \epsilon) < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
-    \[ \Rightarrow \sup A + \sup B - 2 \epsilon < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
-    Noting that $\epsilon$ is arbitrary, as $\epsilon \rightarrow 0$:
-    \[ \Rightarrow \sup A + \sup B < a_{\epsilon} + b_{\epsilon} \leq \sup A + \sup B \]
-    Indicating $a_{\epsilon} + b_{\epsilon} \rightarrow \sup A + \sup B$
-    Thus, $\sup A + \sup B$ is the supremum of $A + B$ by squeeze theorem. Therefore,
-    \[ \sup A + \sup B \leq \sup (A + B) \]
-    By combining two steps, we have $\sup A + \sup B = \sup (A + B)$
+    \[ (\sup A - \epsilon) + (\sup B - \epsilon) < a_{\epsilon} + b_{\epsilon} \leq \sup (A + B) \]
+    \[ \Rightarrow \sup A + \sup B - 2 \epsilon < a_{\epsilon} + b_{\epsilon} \leq \sup (A + B) \]
+    \[ \Rightarrow \sup A + \sup B - 2 \epsilon < \sup (A + B) \]
+    \[ \Rightarrow 0 \leq \frac{1}{2}(\sup A + \sup B - \sup(A + B)) < \epsilon \]
+    By previous step, WLOG, since \( \sup(A + B) \leq \sup A + \sup B \), the left inequality holds.
+    Reffering to one of the theorem in section \textit{2.1}, we can get:
+    \[ \frac{1}{2}(\sup A + \sup B - \sup(A + B)) = 0 \Rightarrow \sup A + \sup B = \sup(A + B) \]
 \end{proof}
 
 \subsection*{Question 3}
@@ -113,19 +115,26 @@ Noting that by definition \( A + B = \{ a + b | a \in A, b \in B \} \)
 
 \subsection*{Question 4}
 For example:
-\[ I_n = \left[ 1 + \frac{1}{n}, 4 - \frac{1}{n} \right) \]
+\[ I_n = \left[ 1 + \frac{1}{n}, 3 + \frac{1}{n} \right) \]
 For each positive integer $n$.
 \\
 Property verificaiton:
 \begin{proof}
-    \\
     \textbf{Part 1:} We show that \(\displaystyle \bigcup_{n=1}^{\infty} I_n = (1, 4)\).
     \\
-    \textit{(i) \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\)}:  
-    Let \( x \in \bigcup_{n=1}^{\infty} I_n \). Then \( x \in I_n \) for some \( n \), i.e., \( 1 + \frac{1}{n} \leq x < 4 - \frac{1}{n} \). Since \( \frac{1}{n} > 0 \), it follows that \( 1 < x < 4 \). Thus, \( x \in (1, 4) \), and hence \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\).
+    \textit{(i) \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\)}: 
     \\
-    \textit{(ii) \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\)}:  
-    Let \( x \in (1, 4) \). Define \( \epsilon = \min\{ x - 1, 4 - x \} > 0 \). Choose \( N \in \mathbb{N} \) such that \( \frac{1}{N} < \epsilon \). Then, for all \( n \geq N \), we have \( 1 + \frac{1}{n} < x < 4 - \frac{1}{n} \), so \( x \in I_n \). Thus, \( x \in \bigcup_{n=1}^{\infty} I_n \), and hence \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\).
+    Let \( x \in \bigcup_{n=1}^{\infty} I_n \). Then \( x \in I_n \) for some \( n \):
+    \[ 1 + \frac{1}{n} < x < 4 - \frac{1}{n}, \ \text{Since } \frac{1}{n} > 0 \]
+    When $n \rightarrow \infty$, it follows that \( 1 \leq x < 4 \). Thus, \( x \in (1, 4) \subseteq [1, 4) \), we can conclude that \(\bigcup_{n=1}^{\infty} I_n \subseteq (1, 4)\).
+    \\
+    \textit{(ii) \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\)}:
+    \\
+    Let \( x \in (1, 4) \). Define \( \epsilon = \min\{ x - 1, 4 - x \} > 0 \). By \textit{Archimedes Theorem}, Choose \( N \in \mathbb{N} \) such that \( \frac{1}{N} < \epsilon \). 
+    \\
+    Then, for all \( n \geq N \), we have:
+    \[ 1 + \frac{1}{n} < 1 + \epsilon < x < 4 - \epsilon < 4 - \frac{1}{n}   \]
+    So \( x \in I_n \). Thus, \( x \in \bigcup_{n=1}^{\infty} I_n \), and hence \((1, 4) \subseteq \bigcup_{n=1}^{\infty} I_n\).
     \\
     Combining (i) and (ii), we obtain \(\bigcup_{n=1}^{\infty} I_n = (1, 4)\).
     
@@ -134,13 +143,17 @@ Property verificaiton:
     \textbf{Part 2:} We show that \(\displaystyle \bigcap_{n=1}^{\infty} I_n = [2, 3]\).
     \\
     \textit{(i) \([2, 3] \subseteq \bigcap_{n=1}^{\infty} I_n\)}:  
-    Let \( x \in [2, 3] \). For any \( n \in \mathbb{N} \), \( 1 + \frac{1}{n} \leq 2 \leq x \leq 3 \leq 4 - \frac{1}{n} \). Thus, \( x \in I_n \) for all \( n \), implying \( x \in \bigcap_{n=1}^{\infty} I_n \). Therefore, \([2, 3] \subseteq \bigcap_{n=1}^{\infty} I_n\).
+    \\
+    Let \( x \in [2, 3] \). For any \( n \in \mathbb{N} \)
+    \[ 1 + \frac{1}{n} \leq 2 \leq x \leq 3 \leq 4 - \frac{1}{n} \]
+    Thus, \( x \in I_n \) for all \( n \), implying \( x \in \bigcap_{n=1}^{\infty} I_n \). Therefore, \([2, 3] \subseteq \bigcap_{n=1}^{\infty} I_n\).
     \\
     \textit{(ii) \(\bigcap_{n=1}^{\infty} I_n \subseteq [2, 3]\)}:  
+    \\
     Let \( x \in \bigcap_{n=1}^{\infty} I_n \). Then \( x \in I_n \) for all \( n \), i.e., \( 1 + \frac{1}{n} \leq x < 4 - \frac{1}{n} \) for all \( n \). As \( n \to \infty \), \( 1 + \frac{1}{n} \to 1 \) and \( 4 - \frac{1}{n} \to 4 \). Thus, \( x \geq 2 \) (since \( x \) cannot be less than 2 for all large \( n \)) and \( x \leq 3 \) (since \( x \) cannot be greater than 3 for all large \( n \)). Hence, \( x \in [2, 3] \).
     \\
     Combining (i) and (ii), we obtain \(\bigcap_{n=1}^{\infty} I_n = [2, 3]\).
     
-    \end{proof}
+\end{proof}
 
 \end{document}
