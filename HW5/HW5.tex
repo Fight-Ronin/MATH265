@@ -142,22 +142,10 @@ Property verificaiton:
             Since \(x < 3\), and \( \frac{1}{n} > 0 \), we have:
             \[ x < 3 + \frac{1}{n} \]
             Therefore \( x \in I_n \), for all $n > N$.
-            \item If \( x \in [3, 4) \):
-            Then $4 - x > 0$. By Archimedes' Theorem, \( \exists N \in \mathbb{N} \) s.t.
-            \[ \frac{1}{N} < 4 - x \]
-            For all $n > N$ $\frac{1}{n} \leq \frac{1}{N} < 4 - x$, so:
-            \[ x < 4 - \frac{1}{n} \]
-            However, since the right endpoint of $I_n$ is $3 + \frac{1}{n}$, and $3 + \frac{1}{n} < 4 - \frac{1}{n}$,
-            we need to ensure $x < 3 + \frac{1}{n}$.
+            \item If \( x \in [3, 4) \): We need to find $n \in \mathbb{N}$ s.t. $x \in I_n$.
             \\
-            Observe that $x - 3 \geq 0$ and $x - 3 < 1$. By Archimedes theorem again, there exists $n \in \mathbb{N}$ s.t.
-            \[ \frac{1}{n} > x - 3 \]
-            This implies":
-            \[ x - 3 < \frac{1}{n} \Rightarrow x < 3 + \frac{1}{n} \]
-            Also, since $x \geq 3$ and $\frac{1}{n} > 0$:
-            \[ x \geq 3 = 1 + 2 \leq 1 + \frac{1}{n} + 2, \ \text{since } \frac{1}{n} < 1 \]
-            \textit{Note: $1 + \frac{1}{n} \leq x$ holds because $1 + \frac{1}{n} \leq 1 + 1 = 2 < x$}
-            \\
+            When $n = 1$, 
+            \[ I_n = [2, 4) \supseteq [3,4) \]
             Therefore, $x \in I_n$
         \end{itemize}
     \end{itemize}
