@@ -25,6 +25,22 @@
 \maketitle
 
 \section*{Question 1}
+\begin{proof}
+    Let $\epsilon > 0$, Consider:
+    \[ N = \max\left\{1, \left\lceil \frac{1}{\left( \frac{\sqrt{2}}{\sqrt{2} + \epsilon} \right)^2 - 1 } \right\rceil \right\} \in \mathbb{N} \]
+    Then for $n > N$:
+    \[ n > \frac{1}{\left( \frac{\sqrt{2}}{\sqrt{2} + \epsilon} \right)^2 - 1} \]
+    \[ \Rightarrow \frac{1}{n} < \left( \frac{\sqrt{2}}{\sqrt{2} + \epsilon} \right)^2 - 1 \Rightarrow 1 + \frac{1}{n} < \left( \frac{\sqrt{2}}{\sqrt{2} + \epsilon} \right)^2 \]
+    \[ \Rightarrow \sqrt{1 + \frac{1}{n}} < \frac{\sqrt{2}}{\sqrt{2} + \epsilon} \Rightarrow \frac{\sqrt{2}}{\sqrt{1 + \frac{1}{n}}} < \sqrt{2} + \epsilon \]
+    \[ \Rightarrow \left| \frac{\sqrt{2}}{\sqrt{1 + \frac{1}{n}}} - \sqrt{2} \right| < \epsilon \Rightarrow \left| \frac{\sqrt{2n}}{\sqrt{n + 1}} - \sqrt{2} \right| < \epsilon \]
+    Hence, by definition, \( \lim_{n \to \infty} \frac{\sqrt{2n}}{\sqrt{n + 1}} = \sqrt{2} \)
+\end{proof}
 
-
+\section*{Question 2}
+\begin{proof}
+    Let $\epsilon > 0$, (Note: $\frac{1}{n^2} - 1 < \frac{-1}{n^2}$), Consider:
+    \[ N = \max \left\{1, \left\lceil \frac{1}{n^2} -1 \right\rceil \right\} \in \mathbb{N} \]
+    Then for $n > N$:
+    \[ \]
+\end{proof}
 \end{document}
