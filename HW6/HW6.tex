@@ -42,8 +42,8 @@
     \[ N = \max \left\{1, \left\lceil \sqrt{\epsilon} \right\rceil \right\} \in \mathbb{N} \]
     Then for $n > N$:
     \[ n > \sqrt{\epsilon} \Rightarrow n^2 > \epsilon \Rightarrow \frac{1}{n^2} < \epsilon \]
-    NOTE: \( \frac{|cos(n)|}{n^2} \leq \frac{1}{n^2} < \epsilon \).
-    \[ \Rightarrow frac{|cos(n)|}{n^2} < \epsilon \]
+    NOTE: by definition of cos(x),
+    \[ \frac{|cos(n)|}{n^2} \leq \frac{1}{n^2} < \epsilon \Rightarrow \frac{|cos(n)|}{n^2} < \epsilon \Rightarrow \left| \frac{cos(n)}{n^2} \right| < \epsilon \]
     Hence, by definition, \( \lim_{n \to \infty} \frac{cos(n)}{n^2} = 0 \)
 \end{proof}
 
@@ -65,14 +65,14 @@
 \begin{proof}
     \[ (x_n) = \{\frac{1}{n}\}_{n=1}^{\infty} \]
     Verficiation:
-    \[ \lim_{n \rightarrow \infty} \ \frac{\frac{1}{n+1}}{\frac{1}{n}} = \lim_{n \rightarrow \infty} \frac{n}{n + 1} = \lim_{n \rightarrow \infty} \frac{1}{1 + \frac{1}{n}} = 1 \]
+    \[ \lim_{n \rightarrow \infty} \ \frac{\frac{1}{n+1}}{\frac{1}{n}} = \lim_{n \rightarrow \infty} \frac{n}{n + 1} = \lim_{n \rightarrow \infty} \frac{1}{1 + \frac{1}{n}} = \frac{1}{1 + 0} = 1 \]
 \end{proof}
 
 \subsubsection*{(b)}
 \begin{proof}
     \[ (x_n) = \{n\}_{n=1}^{\infty} \]
     Verficiation:
-    \[ \lim_{n \rightarrow \infty} \ \frac{n+1}{n} = \lim_{n \rightarrow \infty} 1 + \frac{1}{n} = 1 \]
+    \[ \lim_{n \rightarrow \infty} \ \frac{n+1}{n} = \lim_{n \rightarrow \infty} 1 + \frac{1}{n} = 1 + 0 = 1\]
 \end{proof}
 
 \end{document}
