@@ -39,8 +39,40 @@
 \section*{Question 2}
 \begin{proof}
     Let $\epsilon > 0$, (Note: $\frac{1}{n^2} - 1 < \frac{-1}{n^2}$), Consider:
-    \[ N = \max \left\{1, \left\lceil \frac{1}{n^2} -1 \right\rceil \right\} \in \mathbb{N} \]
+    \[ N = \max \left\{1, \left\lceil \sqrt{\epsilon} \right\rceil \right\} \in \mathbb{N} \]
     Then for $n > N$:
-    \[ \]
+    \[ n > \sqrt{\epsilon} \Rightarrow n^2 > \epsilon \Rightarrow \frac{1}{n^2} < \epsilon \]
+    NOTE: \( \frac{|cos(n)|}{n^2} \leq \frac{1}{n^2} < \epsilon \).
+    \[ \Rightarrow frac{|cos(n)|}{n^2} < \epsilon \]
+    Hence, by definition, \( \lim_{n \to \infty} \frac{cos(n)}{n^2} = 0 \)
 \end{proof}
+
+\section*{Question 3}
+\begin{proof}
+    For this question, we need to use the theorem. Noting that \( (x_n) = (\frac{2^n}{n!}) \) is a positive sequence.
+    We want to show \( L = \lim_{n \rightarrow \infty} (\frac{x{n + 1}}{x_n}) \) exists and $L < 1$.
+    \\
+    \[ \frac{x_{n+1}}{x_n} = \frac{\frac{2^{n+1}}{(n+1)!}}{\frac{2^n}{n!}} = \frac{2}{n + 1} \]
+    \[ \Rightarrow \lim_{n \rightarrow \infty} \frac{2}{n + 1}  = \lim_{n \rightarrow \infty} \frac{\frac{2}{n}}{1 + \frac{1}{n}} \]
+    By proposition, \( \lim_{n \rightarrow \infty} \frac{1}{n} = 0 \), similarly, \( \lim_{n \rightarrow \infty} \frac{2}{n} = 0 \). Hence, by limit law,
+    \[ L = \frac{\lim_{n \rightarrow \infty} \frac{2}{n}}{\lim_{n \rightarrow \infty} (1 + \frac{1}{n})} = \frac{\lim_{n \rightarrow \infty} \frac{2}{n}}{\lim_{n \rightarrow \infty} (1) + \lim_{n \rightarrow \infty} (\frac{1}{n})} = \frac{0}{1 + 0} = 0 \]
+    Since $L = 0 < 1$, by theorem, \(\lim_{n \rightarrow \infty} \frac{2^n}{n!} = 0\).
+\end{proof}
+
+\section*{Question 4}
+
+\subsubsection{(a)}
+\begin{proof}
+    \[ (x_n) = (\frac{1}{n})_{n=1}^{\infty} \]
+    Verficiation:
+    \[ \lim_{n \rightarrow \infty} \ \frac{\frac{1}{n+1}}{\frac{1}{n}} = \lim_{n \rightarrow \infty} \frac{n}{n + 1} = \lim_{n \rightarrow \infty} \frac{1}{1 + \frac{1}{n}} = 1 \]
+\end{proof}
+
+\subsubsection{(b)}
+\begin{proof}
+    \[ (x_n) = (n)_{n=1}^{\infty} \]
+    Verficiation:
+    \[ \lim_{n \rightarrow \infty} \ \frac{n+1}{n} = \lim_{n \rightarrow \infty} 1 + \frac{1}{n} = 1 \]
+\end{proof}
+
 \end{document}
