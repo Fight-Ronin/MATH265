@@ -38,37 +38,38 @@
         Therefore, $x^y$ is an upper bound of $E(x, y)$
         \item Least Upper Bound (Supremum): 
         \\
-        Suppose there exists a real number $M < x^y$ that is also an upper bound of $E(x,y)$
-        Since $x^y - M > 0$, set $\epsilon = x^y - M$.
+        By the consequence of the Density Theorem: For $M \in \mathbb{R}$ satisfying $M < x^y$, there exists $t \in \mathbb{Q}$ such that $M < x^t < x^y$.
         \\
-        Noting that rationals are dense in $\mathbb{R}$, there exists $t \in \mathbb{Q}$ s.t. 
-        \[ y - \delta < t < y \]
-        Where $\delta > 0$ is small enough to ensure $x^y - x^t < \epsilon$.
-        Then:
-        \[ x^t > x^y - \epsilon = M \]
-        This contradict the assumption that $M$ is an upper bound of $E(x, y)$.
-        Therefore, no number less than $x^y$ can be an upper bound of $E(x,y)$, so $x^y$ is the supremum of $E(x,y)$.
+        Suppose $M$ is an upper bound of set $E(x,y)$ and $M < x^y$, by the consequence listed upwards, we can always find an $x^t$ s.t. $x^t > M$. This contradict the assumption that
+        $M$ is an upper bound of $E(x, y)$. Therefore, no number less than $x^y$ can be an upperbound of $E(x,y)$. Hence, $x^ = \sup E(x, y)$.
     \end{enumerate}
 \end{proof}
 
 \subsection*{(b)}
 \begin{proof}
-    To show boundness, we need to show there exists an upperbound and lower bound in $E(x,y)$, when $y \in \mathbb{R}$
-    \\
-    \begin{enumerate}
-        \item Upper bound: 
-        \\
-        Since $x^t < x^y$ for all $t < y$, $x^y$ is an upper bound of $E(x,y)$
-        \item Lower Bound:
-        \\
-        And we know that $x^t > 0$ for all $t$ by given definition. Therefore, $E(x,y)$ is bounded below.
-    \end{enumerate}
-    Hence $E(x, y)$ is bounded.
+    Given $y \in \mathbb{R}$, since $\mathbb{Q}$ is dense in $\mathbb{R}$, $\exists y' \in \mathbb{Q}$ s.t. $y < y'$.
+    Hence,
+    \[ E(x, y) \subseteq E(x, y') \]
+    Which is equivilant saying by definition, for all $t < y$,
+    \[ 0 < x^t < x^y' \]
+    Thus, $E(x, y)$ is bounded for $y \in \mathbb{R}$.
 \end{proof}
 
 \subsection*{(c)}
 \begin{proof}
-    To proof $x^{y + z} = x^y x^z$, we need to validate two directions:
+    First, we need to show that let $t \in \mathbb{Q}$ with $t < y + z$, there exists $t_1, t_2 \in \mathbb{Q}$ s.t. $t = t_1 + t_2, \ t_1 < y, \ t_2 < z$.
+    \\
+    By densitiy theorem, $\exists t_1 \in \mathbb{Q}$ s.t.
+    \[ y - \epsilon < t_1 < y \ (1) \] 
+    we pick $\epsilon = y + z - t$ for the following proof.
+    let $t_2 = t - t_1$ (NOTE: Since $t, t_1 \in \mathbb{Q}$, then $t_2 \in \mathbb{Q}$). 
+    \\
+    Then we sub $t_1 = t - t_2$ and our defined $\epsilon$ into (1), we can get:
+    \[ y - \epsilon < t - t_2 < y \Rightarrow y - y - z + t < t - t_2 < y \Rightarrow t - z < t - t_2 < y \]
+    \[ \Rightarrow -z < -t_2 < y - t \Rightarrow t_2 < z < y - t \]
+    By looking at the left inequality, we finished our proof.
+    \\
+    Using our proved statement upwards, to proof $x^{y + z} = x^y x^z$, we need to validate two directions:
     \\
     \begin{enumerate}
         \item First we need to show $x^{y + z} \leq x^y x^z$:
@@ -78,26 +79,28 @@
         \[ t_1 < y; \ t_2 < z; \ t = t_1 + t_2 \]
         Then:
         \[ x^t = x^{t_1 + t_2} = x^{t_1}x^{t_2} < x^yx^z \]
-        Therefore, every element $x^t$ of $E(x, y + z) \leq x^yx^z$
+        Therefore, every element $x^t$ of $E(x, y + z) \leq x^yx^z$.
         Thus:
         \[ x^{y + z} = \sup E(x, y + z) \leq x^y x^z \]
         \item Then we need to show $x^{y + z} \geq x^y x^z$:
-        For any $\epsilon > 0$, choost $t_1, t_2 \in \mathbb{Q}$ s.t.:
-        \[ y - \epsilon < t_1 < y, \ z - \epsilon < t_2 < z \]
-        Then $t_1 + t_2 < y + z$, so $t_1 + t_2 \in E(x, y + z)$
-        Compute: 
-        \[ x^{t_1}x^{t_2} = x^{t_1 + t_2} \leq x^{y + z} \]
-        Since $t_1 \rightarrow y$ and $t_2 \rightarrow z$, $x^{t_1} \rightarrow x^y$ and $x^{t_2} \rightarrow x^z$.
+        For any $t < y, u < z$, $t,u \in \mathbb{Q}$, by 1 (c), we can get:
+        \[ x^{t + u} \leq x^{y + z} \Leftrightarrow x^t x^u \leq x^{y + z} \]
+        (NOTE: $x^{t + u} \in E(x, y + z)$)
         \\
-        Therefore:
-        \[ x^{y + z} \geq \lim_{t_1 \rightarrow y^{-}} \lim_{t_2 \rightarrow z^{-}} x^{t_1} x^{t_2} = x^y x^z - \delta \]
-        where $\delta$ can be made arbitrarily small. Thus:
-        \[ x^{y + z} \geq x^y x^z \]
+        We can rearrange this inequality into 2 forms:
+        \begin{enumerate}
+            \item \[ x^u \leq x^{-t} x^{y + z} \Rightarrow x^z \leq x^{-t} x^{y + z} \]
+            Since $x^z$ is l.u.b by definition and $x^{-t} x^{y + z}$ is an upperbound.
+            \item \[ x^t \leq x^{-u} x^{y + z} \Rightarrow x^z \leq x^{-u} x^{y + z} \]
+            Similarly for this case.
+        \end{enumerate}
+        Therefore, combining two inequalities,
+        \[ x^z x^y \leq (x^{-t})(x^{-u})x^{y + z} \leq x^{y + z} \Rightarrow x^{y + z} \leq x^z x^y \]
     \end{enumerate}
     Combining both inequalities, we get $x^{y + z} = x^y x^z$
     \\
-    The property \( x^{y+z} = x^y x^z \) implies that the function \( f(y) = x^y \) is \textbf{injective} because it ensures that equal outputs correspond to equal inputs. 
-    Specifically by definition, if \( f(y_1) = f(y_2) \), then \( x^{y_1} = x^{y_2} \). Using the exponential property, we have \( x^{y_1 - y_2} = 1 \). Since \( x > 1 \) and the exponential function \( x^t \) is strictly increasing, the equation \( x^t = 1 \) holds only when \( t = 0 \). Therefore, \( y_1 - y_2 = 0 \), which means \( y_1 = y_2 \). 
+    The property \( x^{y+z} = x^y x^z \) implies that the function \( f(y) = x^y \) is \textbf{injective}.
+    Specifically by definition, if \( f(y_1) = f(y_2) \), then \( x^{y_1} = x^{y_2} \). Using the exponential property proved in (c), we have \( x^{y_1 - y_2} = 1 \). Since \( x > 1 \) and the exponential function \( x^t \) is strictly increasing, the equation \( x^t = 1 \) holds only when \( t = 0 \). Therefore, \( y_1 - y_2 = 0 \), which means \( y_1 = y_2 \). 
     This shows that \( f \) is injective because no two different inputs produce the same output.
 \end{proof}
 
@@ -122,27 +125,29 @@
     \[ x^{\frac{1}{n}} - 1 < t - 1 \Longrightarrow x^{\frac{1}{n}} < t \]
     \textbf{Step iii:} If $y \in \mathbb{R}$ and $x^y < z$, then there exists $n \in \mathbb{N}$ s.t. $x^{y + \frac{1}{n}} < z$:
     \\
-    Set $t = \frac{x^y}{z}$, note $\frac{x^y}{z} > 1$ by definition. Again using step ii, choose $n \in \mathbb{N}$ s.t.:
+    Set $t = \frac{x^y}{z}$, note $\frac{x^y}{z} > 1$ by definition. Again using step (ii), choose $n \in \mathbb{N}$ s.t.:
     \[ n > \frac{x - 1}{t - 1} \]
     Then $x^{\frac{1}{n}} < t$, recall question $1(c)$ and multiply $x^y$ on both side, we can get:
-    \[ x^{y + \frac{1}{n}} = x^y \cdot x^{\frac{1}{n}} < x^y \cdot t = z \]
-    \textbf{Step iv:} If $y \in \mathbb{R}$ and $x^y > z$, then there exists $n \in \mathbb{N}$ s.t. $x^{y + \frac{1}{n}} > z$:
+    \[ x^y \cdot x^{\frac{1}{n}} = x^{y + \frac{1}{n}}  < x^y \cdot t = z \]
+    \textbf{Step iv:} If $y \in \mathbb{R}$ and $x^y > z$, then there exists $n \in \mathbb{N}$ s.t. $x^{y - \frac{1}{n}} > z$:
     \\
-    Set $t = \frac{z}{x^y}$, note $\frac{z}{x^y} > 1$ by definition. Again using step ii, choose $n \in \mathbb{N}$ s.t.:
+    Set $t = \frac{z}{x^y}$, note $\frac{z}{x^y} > 1$ by definition. Again using step (ii), choose $n \in \mathbb{N}$ s.t.:
     \[ n > \frac{x - 1}{t - 1} \]
-    Then $x^{\frac{1}{n}} < t$, so $x^{-\frac{1}{n}} = \frac{1}{x^{\frac{1}{n}}} > \frac{1}{n}$. Recall question $1(c)$ and multiply $x^y$ on both side, we can get:
-    \[ x^{y - \frac{1}{n}} = x^y \cdot x^{-\frac{1}{n}} < x^y \cdot \frac{1}{t} = z \]
+    Then $x^{\frac{1}{n}} < t$, so $ \frac{1}{x^{\frac{1}{n}}} = x^{-\frac{1}{n}} > \frac{1}{t}$. Recall question $1(c)$ and multiply $x^y$ on both side, we can get:
+    \[ x^y \cdot x^{-\frac{1}{n}} = x^{y - \frac{1}{n}} > x^y \cdot \frac{1}{t} = z \]
     \textbf{Step v:} Define $A(z) = \{w \in \mathbb{R} | x^w < z \}$. Let $y = \sup A(z)$. then $x^y = z$
     \\
-    First, since $x^w \rightarrow 0$, as $w \rightarrow - \infty$ and $x^w \rightarrow \infty$, as $w \rightarrow \infty$, there exist real numbers $w$ s.t. $x^w < z$.
+    \textit{Case 1: }
+    Suppose $x^y < z$: by step (iii), there exists $n$ s.t. $x^{y + \frac{1}{n}} < z$. This indicates $y + \frac{1}{n} \in A(z)$. Noting that $x^{y + \frac{1}{n}} > x^{y}$, we can get:
+    \[ z > x^{y + \frac{1}{n}} > x^{y} \]
+    This contradicting the fact that $y = \sup A(z)$.
     \\
-    The set $A(z)$ is bounded above because $x^w \geq z$ for sufficiently large $w$.
+    \textit{Case 2: }
+    Similarly, suppose $x^y > z$: by step (iv), there exists $n$ s.t. $x^{y - \frac{1}{n}} > z$. But for $y - \frac{1}{n}$, we can find a $w_0 \in A(z)$ s.t.
+    \[ y - \frac{1}{n} < w < z \Rightarrow x^{y - \frac{1}{n}} < x^w < x^z \]
+    This contradicting with the result that we have in step (iv)
     \\
-    Suppose $x^y < z$: by step (iii), there exists $n$ s.t. $x^{y + \frac{1}{n}} < z$, contradicting the fact that $y = \sup A(z)$.
-    \\
-    Similarly, suppose $x^y > z$: by step (iv), there exists $n$ s.t. $x^{y - \frac{1}{n}} > z$, but $y - \frac{1}{n} < y$, again contradicting the fact that $y = \sup A(z)$ (i.e. $y$ is l.u.b).
-    \\
-    Consequently, neither $x^y < z$ not $x^y > x$ is possible; thus, $x^y = z$.
+    Consequently, neither $x^y < z$ not $x^y > z$ is possible; thus, $x^y = z$.
 \end{proof}
 
 \section*{Question 3}
@@ -150,15 +155,15 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
 \begin{proof}
     For the given sequence, we can define it recusively:
     \[ a_1 = \sqrt{2}, \ a_{n + 1} = \sqrt{2a_n}, \ for \ n \geq 1 \]
-    Then we can set an induction to prove this sequence is increasing. I.e. We will prove $a_n < a_{n + 1}$ for all $n \geq 1$
+    First, we need to set up an induction to prove this sequence is increasing. I.e. We will prove $a_n < a_{n + 1}$ for all $n \geq 1$
     \\
-    Base Case (n = 1):
+    \textit{Base Case (n = 1):}
     \\
     \[ a_1 = \sqrt{2}, \ a_2 = \sqrt{2a_1} = \sqrt{2\sqrt{2}} \]
     Noticing that $a_1, a_2 > 0$, and $a_1^2 = 2, a_2^2 = 2\sqrt{2}$, so:
     \[ 2 < 2\sqrt{2} \Leftrightarrow a_1^2 < a_2^2 \Rightarrow a_1 < a_2 \]
     \\
-    Inductive steps:
+    \textit{Inductive steps:}
     \\
     Assume $a_n < a_{n + 1}$ for some $n \geq 1$. We need to show $a_{n + 1} < a_{n + 2}$.
     \\
@@ -166,22 +171,23 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \[ a_{n + 1} = \sqrt{2a_n}, \ a_{n + 2} = \sqrt{2a_{n+1}} \]
     Then, since $a_n > 0, \ \forall n \in \mathbb{N}$:
     \[ \sqrt{2a_n} < \sqrt{2a_{n+1}} \Leftrightarrow 2a_n < 2a_{n+1} \Leftrightarrow a_n < a_{n+1} \]
-    Hence, by our induction hypothesis, $a_{n + 1} < a_{n + 2}$. Therefore by induction, sequence $\{a_n\}$ is increasing.
+    Hence, by our induction hypothesis, $a_{n + 1} < a_{n + 2}$. 
     \\
-    Then, we need to show that $(a_n)$ is bounded above. I.e., we will prove by induction that $a_n < 2$ for all $n > 1$
+    Therefore by induction, sequence $\{a_n\}$ is increasing.
     \\
-    Base Case (n = 1):
+    Then, we need to show that $(a_n)$ is bounded above. (I.e., we will prove by induction that $a_n < 2$ for all $n \geq 1$)
+    \\
+    \textit{Base Case (n = 1):}
     \\
     \[ a_1 = \sqrt{2} < 2 \]
     \\
-    Inductive Step:
+    \textit{Inductive Step:}
     \\
     Assume $a_n < 2$ for some $n \geq 1$, we need to show $a_{n + 1} < 2$:
     \\
-    From our previous definition, $a_{n + 1} = \sqrt{2 a_n}$. 
-    Since $a_n < 2$, we have $2a_n < 2 \times 2 = 4$, hence:
+    From our previous definition, $a_{n + 1} = \sqrt{2 a_n}$, we can get: 
     \[ a_{n + 1} = \sqrt{2a_n} < \sqrt{4} = 2 \]
-    By induction again, $a_n < 2$ for all $n > 1$.
+    By induction again, $a_n < 2$ for all $n  1$.
     \\
     Since $\{a_n \}$ is increasing and bounded above by $2$, by MCT, $\{a_n\}$ converges to some limit $L$ s.t. $L \leq 2$
     \\
