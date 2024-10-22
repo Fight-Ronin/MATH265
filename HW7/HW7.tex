@@ -51,7 +51,7 @@
     Hence,
     \[ E(x, y) \subseteq E(x, y') \]
     Which is equivilant saying by definition, for all $t < y$,
-    \[ 0 < x^t < x^y' \]
+    \[ 0 < x^t < x^y^' \]
     Thus, $E(x, y)$ is bounded for $y \in \mathbb{R}$.
 \end{proof}
 
@@ -91,13 +91,13 @@
         \begin{enumerate}
             \item \[ x^u \leq x^{-t} x^{y + z} \Rightarrow x^z \leq x^{-t} x^{y + z} \]
             Since $x^z$ is l.u.b by definition and $x^{-t} x^{y + z}$ is an upperbound.
-            \item \[ x^t \leq x^{-u} x^{y + z} \Rightarrow x^z \leq x^{-u} x^{y + z} \]
+            \item \[ x^t \leq x^{-u} x^{y + z} \Rightarrow x^y \leq x^{-u} x^{y + z} \]
             Similarly for this case.
         \end{enumerate}
         Therefore, combining two inequalities,
-        \[ x^z x^y \leq (x^{-t})(x^{-u})x^{y + z} \leq x^{y + z} \Rightarrow x^{y + z} \leq x^z x^y \]
+        \[ x^z x^y \leq (x^{-t})(x^{-u})x^{y + z} \leq x^{y + z} \Rightarrow x^{y + z} \leq x^y x^z \]
     \end{enumerate}
-    Combining both inequalities, we get $x^{y + z} = x^y x^z$
+    Overall, combining inequalities we proved in both cases, we get $x^{y + z} = x^y x^z$
     \\
     The property \( x^{y+z} = x^y x^z \) implies that the function \( f(y) = x^y \) is \textbf{injective}.
     Specifically by definition, if \( f(y_1) = f(y_2) \), then \( x^{y_1} = x^{y_2} \). Using the exponential property proved in (c), we have \( x^{y_1 - y_2} = 1 \). Since \( x > 1 \) and the exponential function \( x^t \) is strictly increasing, the equation \( x^t = 1 \) holds only when \( t = 0 \). Therefore, \( y_1 - y_2 = 0 \), which means \( y_1 = y_2 \). 
