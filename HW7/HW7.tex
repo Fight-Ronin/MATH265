@@ -87,17 +87,12 @@
         \[ x^{t + u} \leq x^{y + z} \Leftrightarrow x^t x^u \leq x^{y + z} \]
         (NOTE: $x^{t + u} \in E(x, y + z)$)
         \\
-        We can rearrange this inequality into 2 forms:
-        \begin{enumerate}
-            \item \[ x^u \leq x^{-t} x^{y + z} \Rightarrow x^z \leq x^{-t} x^{y + z} \]
-            Since $x^z$ is l.u.b by definition and $x^{-t} x^{y + z}$ is an upperbound.
-            \item \[ x^t \leq x^{-u} x^{y + z} \Rightarrow x^y \leq x^{-u} x^{y + z} \]
-            Similarly for this case.
-        \end{enumerate}
-        Therefore, combining two inequalities,
-        \[ x^z x^y \leq (x^{-t})(x^{-u})x^{y + z} \leq x^{y + z} \Rightarrow x^{y + z} \leq x^y x^z \]
+        We can rearrange this inequality into:
+        \[ x^u \leq x^{-t} x^{y + z} \Rightarrow x^z \leq x^{-t} x^{y + z} \]
+        \[ \Rightarrow x^{t} \leq (x^{z})^{-1} x^{y + z} \Rightarrow x^{y} \leq (x^{z})^{-1} x^{y + z} \]
+        \[ \Rightarrow x^{y}x^{z} \leq x^{y + z} \]
     \end{enumerate}
-    Overall, combining inequalities we proved in both cases, we get $x^{y + z} = x^y x^z$
+    Overall, combining inequalities we proved in both cases, we get $x^{y + z} = x^y x^z$.
     \\
     The property \( x^{y+z} = x^y x^z \) implies that the function \( f(y) = x^y \) is \textbf{injective}.
     Specifically by definition, if \( f(y_1) = f(y_2) \), then \( x^{y_1} = x^{y_2} \). Using the exponential property proved in (c), we have \( x^{y_1 - y_2} = 1 \). Since \( x > 1 \) and the exponential function \( x^t \) is strictly increasing, the equation \( x^t = 1 \) holds only when \( t = 0 \). Therefore, \( y_1 - y_2 = 0 \), which means \( y_1 = y_2 \). 
@@ -138,16 +133,15 @@
     \textbf{Step v:} Define $A(z) = \{w \in \mathbb{R} | x^w < z \}$. Let $y = \sup A(z)$. then $x^y = z$
     \\
     \textit{Case 1: }
-    Suppose $x^y < z$: by step (iii), there exists $n$ s.t. $x^{y + \frac{1}{n}} < z$. This indicates $y + \frac{1}{n} \in A(z)$. Noting that $x^{y + \frac{1}{n}} > x^{y}$, we can get:
-    \[ z > x^{y + \frac{1}{n}} > x^{y} \]
+    Suppose $x^y < z$: by step (iii), there exists $n$ s.t. $x^{y + \frac{1}{n}} < z$. This indicates $y + \frac{1}{n} \in A(z)$.
     This contradicting the fact that $y = \sup A(z)$.
     \\
     \textit{Case 2: }
     Similarly, suppose $x^y > z$: by step (iv), there exists $n$ s.t. $x^{y - \frac{1}{n}} > z$. But for $y - \frac{1}{n}$, we can find a $w_0 \in A(z)$ s.t.
-    \[ y - \frac{1}{n} < w < z \Rightarrow x^{y - \frac{1}{n}} < x^w < x^z \]
-    This contradicting with the result that we have in step (iv)
+    \[ y - \frac{1}{n} < w_0 \Rightarrow x^{y - \frac{1}{n}} < x^w < z \]
+    This contradict with the result that we have in step (iv).
     \\
-    Consequently, neither $x^y < z$ not $x^y > z$ is possible; thus, $x^y = z$.
+    Consequently, neither $x^y < z$ nor $x^y > z$ is possible; thus, $x^y = z$.
 \end{proof}
 
 \section*{Question 3}
@@ -187,7 +181,7 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \\
     From our previous definition, $a_{n + 1} = \sqrt{2 a_n}$, we can get: 
     \[ a_{n + 1} = \sqrt{2a_n} < \sqrt{4} = 2 \]
-    By induction again, $a_n < 2$ for all $n  1$.
+    By induction again, $a_n < 2$ for all $n \geq 1$.
     \\
     Since $\{a_n \}$ is increasing and bounded above by $2$, by MCT, $\{a_n\}$ converges to some limit $L$ s.t. $L \leq 2$
     \\
@@ -195,10 +189,10 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \[ L = \lim_{n \rightarrow \infty} a_{n + 1} = \lim_{n \rightarrow \infty} \sqrt{2a_n} = \sqrt{2L} \]
     Then:
     \[ L = \sqrt{2L} \Longrightarrow L^2 = 2L \Longrightarrow L^2 - 2L = 0 \Longrightarrow L(L - 2) = 0 \]
-    So $L = 0, 2$, and since $a_n > 0$, limit $L \geq \sqrt{2} > 0$. so $L = 2$.
+    So $L = 0, 2$, and since $a_n > 0$, limit $L \geq \sqrt{2} > 0$. Lastly, $L = 2$ only.
     \\
-    Lastly, the limit found for the given sequence is:
-    \[ \lim_{n \rightarrow \infty} a_n = 2 \]    
+    The limit found for the given sequence is:
+    \[ \lim_{n \rightarrow \infty} a_n = 2 \]
 \end{proof}
 
 \section*{Question 4}
@@ -207,68 +201,67 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \\
     Let $(x_n)$ be a monotone sequence.
     \\
-    $\Rightarrow$: By one of the \textit{theorem} in 10/21's lecture, any subsequence of a convergent sequence converges to the same limit. So $(x_n)$ has a convergent subsequence.
+    $\Leftarrow$: 
     \\
-    $\Leftarrow$: Assume $(x_n)$ has a subsequence $(x_{n_k})$ that converges to some limit $L$.
+    By one of the theorem in ``10/21'' lecture, since $(x_n)$ in convergent to $x$, then $(x_{n_k})$ is convergent to $x$ for any subsequence of $(x_n)$.
+    So we are done.
     \\
-    Since $(x_n)$ is monotone, it is either non-decreasing or non-increasing. Without loss of generality, suppose $(x_n)$ is non-decreasing.
-
-    \begin{enumerate}
-        \item \textbf{Upper Bound: } Because $(x_{n_k}) \rightarrow L$, for all $n \geq N, n, N \in \mathbb{N}$, we have $x_n \leq L$
-        (where $N$ is large enough), we have $x_n < L$.
-        \item \textbf{Monotonicity and limit: } Since $(x_n)$ is non-decreasing by our set up and bounded above by $L$, by MCT, it must converge to its supremum. That is,
-        \[ \lim_{n \rightarrow \infty} x_n = \sup\{x_n \ : \ n \in \mathbb{N} \} \leq L \]
-    \end{enumerate}
-    But, since given that there exists a subsequence $(x_{n_k})$ converges to $L$, the supremum of $\{x_n\}$ must be $L$.
-    \\
-    Therefore, $(x_n)$ converges to $L$.
-    \\
-    By proving both direction is valid, we finish the proof.
-\end{proof}
-
-\section*{Question 5}
-\begin{proof}
-    Let $(x_n)$ be a monotone sequence.
-    \\
-    $\Rightarrow$: This direction is identical to the previous proof, so we skip.
-    \\
-    $\Leftarrow$: Following with the same setup, 
+    $\Rightarrow$:
     \\
     Assume $(x_n)$ has a subsequence $(x_{n_k})$ that converges to some limit $L$.
     \\
     Since $(x_n)$ is monotone, it is either non-decreasing or non-increasing. Without loss of generality, suppose $(x_n)$ is non-decreasing.
-    \begin{enumerate}
-        \item \textbf{Upper Bound: } Since $(x_{n_k}) \rightarrow L$, by definition, for any $\epsilon > 0$, there exists $K$ s.t. for all $k \geq K$,
-        \[ |x_{n_k} - L| < \epsilon \Longrightarrow x_{n_k} > L - \epsilon \]
-        \item \textbf{Monotonicity: } Because $(x_n)$ is non-decreasing, for all $n \geq n_K$, we have \( x_n_K \leq x_n \).
-        \\
-        Since $x_{n_K} > L - \epsilon$, 
-        \[ x_n \geq x_{n_K} > L - \epsilon, \ \text{for all } n \geq n_K \]
-        \item \textbf{boundness of $x_n$: } Also, since $(x_n)$ is bounded abover by any terms beyond $x_{n_K}$ (NOTE: It is non-decreasing), and $x_{n_K} \rightarrow L$, we have
-        \[ x_n \leq L + \epsilon \ \text{for all } n \]
-    \end{enumerate}
-    Therefore, for all $n \geq n_K$,
-    \[ L - \epsilon < x_n \leq L + \epsilon \]
-    This implies that
-    \[ |x_n - L| < \epsilon \ \text{for all } n > n_K \]
-    Therefore, by the limit definition, we have $\lim_{n \rightarrow \infty} x_n = L$. Thus, $(x_n)$ convertges to $L$.
+    \\
+    We want to show that for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $n \geq N_{\epsilon}$:
+    \[ L - \epsilon < x_n < L + \epsilon \]
+    First we show the left inequality of our goal: 
+    \\
+    Since $(x_{n_k}) \rightarrow L$, for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $k \geq N_{\epsilon}$:
+    \[ L - \epsilon  < x_{n_k} < L + \epsilon \Leftrightarrow |x_{n_k} - L| < \epsilon \Longrightarrow x_{n_k} > L - \epsilon \]
+    Because $(x_n)$ is non-decreasing, and we know $n \geq n_k$ by definiton of subsequence, we have \( x_n \geq x_{n_k} \).
+    \[ \Rightarrow x_n \geq x_{n_K} > L - \epsilon, \Rightarrow x_n > L - \epsilon \]
+    For remaining right inequality, we will prove it by contradiction:
+    \\
+    Assume $\exists m \in \mathbb{N}$ s.t. $x_m \geq L + \epsilon$. For $n_m \geq k$, we can have
+    \[ x_{n_{N_{\epsilon}}} \geq \cdots \geq x_{n_{m + 1}} \geq x_{n_m} \geq x_k \geq L + \epsilon \]
+    But out definition states that for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $k \geq N_{\epsilon}$, we get:
+    \[ x_{n_k} < L + \epsilon \]
+    Thus, we got a contradiction here.
+    \\
+    Combining the previous 2 cases, for all $n \geq N_{\epsilon}$,
+    \[ L - \epsilon < x_n \leq L + \epsilon \Leftrightarrow |x_n - L| < \epsilon \]
+    Therefore, by definition, we have $\lim_{n \rightarrow \infty} x_n = L$. Thus, $(x_n)$ convertges to $L$.
 \end{proof}
 
-\noindent Now, lets recall Bolzano-Weierstrass Theorem and Monotone Convergence Theorem:
+\section*{Question 5}
+\noindent First, lets recall Bolzano-Weierstrass and Monotone Convergence Theorem:
 \\
-\textit{Monotone Convergence Theorem: } Every bounded monotonic sequence converges.
+\textit{Monotone Convergence Theorem: } A monotone sequence of real numbers is convergent \textit{if and only if} it is bounded.
 \\
 \textit{Bolzano-Weierstrass Theorem: } Every bounded sequence in $\mathbb{R}$ has a convergent subsequence.
 \\
-To prove MCT using Bolzano-Weierstrass Theorem and our previous result, we can approach in this way:
+To prove MCT using Bolzano-Weierstrass Theorem and our previous result, referencing the result that we have in $Q4$, we can approach in this way:
 \begin{proof}
+    \hspace{0.001cm}
+    \\
+    $\Leftarrow$: 
+    \\
     Let $(x_n)$ be a bounded monotonic sequence. WLOG, $(x_n)$ is non-decreasing.
     \\
     Since $(x_n)$ is bounded, by \textit{Bolzano-Weierstrass Theorem}, there exists a convergent subsequence $(x_{n_k})$ s.t.
     \[ \lim_{k \rightarrow \infty} x_{n_k} = L \]
     From our previous result since $(x_n)$ is monotonic and has a converging subsequence $(x_{n_k})$, sequence $(x_n)$ converges to the same limit $L$.
     \\
-    Therefore, every bounded monotonic sequence converges.
+    Therefore, a bounded monotonic sequence converges.
+    \\
+    $\Rightarrow$: 
+    \\
+    This direction is obviously true. Consider $\epsilon = 1$ for $(x_n) \rightarrow L$ (convergent sequence ).
+    $\exists N_{\epsilon} \in \mathbb{N}$ s.t. $n \geq N_{\epsilon}$:
+    \[ |x_n - L| < 1 \Leftrightarrow L - 1 < x_n < L + 1 \]
+    Then we can pick a value $M$ to bound sequence $(x_n)$ as:
+    \[ M = \max \{|x_1|, \cdots, |x_{N_{\epsilon - 1}}|, |L + 1|, |L - 1|\} \]
+    Hence, $|x_n| \leq M$, a convergent monotonic sequence bounded.
 \end{proof}
 
 \end{document}
