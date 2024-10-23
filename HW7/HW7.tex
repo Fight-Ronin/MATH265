@@ -201,4 +201,74 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \[ \lim_{n \rightarrow \infty} a_n = 2 \]    
 \end{proof}
 
+\section*{Question 4}
+\begin{proof}
+    \hspace{0.001cm}
+    \\
+    Let $(x_n)$ be a monotone sequence.
+    \\
+    $\Rightarrow$: By one of the \textit{theorem} in 10/21's lecture, any subsequence of a convergent sequence converges to the same limit. So $(x_n)$ has a convergent subsequence.
+    \\
+    $\Leftarrow$: Assume $(x_n)$ has a subsequence $(x_{n_k})$ that converges to some limit $L$.
+    \\
+    Since $(x_n)$ is monotone, it is either non-decreasing or non-increasing. Without loss of generality, suppose $(x_n)$ is non-decreasing.
+
+    \begin{enumerate}
+        \item \textbf{Upper Bound: } Because $(x_{n_k}) \rightarrow L$, for all $n \geq N, n, N \in \mathbb{N}$, we have $x_n \leq L$
+        (where $N$ is large enough), we have $x_n < L$.
+        \item \textbf{Monotonicity and limit: } Since $(x_n)$ is non-decreasing by our set up and bounded above by $L$, by MCT, it must converge to its supremum. That is,
+        \[ \lim_{n \rightarrow \infty} x_n = \sup\{x_n \ : \ n \in \mathbb{N} \} \leq L \]
+    \end{enumerate}
+    But, since given that there exists a subsequence $(x_{n_k})$ converges to $L$, the supremum of $\{x_n\}$ must be $L$.
+    \\
+    Therefore, $(x_n)$ converges to $L$.
+    \\
+    By proving both direction is valid, we finish the proof.
+\end{proof}
+
+\section*{Question 5}
+\begin{proof}
+    Let $(x_n)$ be a monotone sequence.
+    \\
+    $\Rightarrow$: This direction is identical to the previous proof, so we skip.
+    \\
+    $\Leftarrow$: Following with the same setup, 
+    \\
+    Assume $(x_n)$ has a subsequence $(x_{n_k})$ that converges to some limit $L$.
+    \\
+    Since $(x_n)$ is monotone, it is either non-decreasing or non-increasing. Without loss of generality, suppose $(x_n)$ is non-decreasing.
+    \begin{enumerate}
+        \item \textbf{Upper Bound: } Since $(x_{n_k}) \rightarrow L$, by definition, for any $\epsilon > 0$, there exists $K$ s.t. for all $k \geq K$,
+        \[ |x_{n_k} - L| < \epsilon \Longrightarrow x_{n_k} > L - \epsilon \]
+        \item \textbf{Monotonicity: } Because $(x_n)$ is non-decreasing, for all $n \geq n_K$, we have \( x_n_K \leq x_n \).
+        \\
+        Since $x_{n_K} > L - \epsilon$, 
+        \[ x_n \geq x_{n_K} > L - \epsilon, \ \text{for all } n \geq n_K \]
+        \item \textbf{boundness of $x_n$: } Also, since $(x_n)$ is bounded abover by any terms beyond $x_{n_K}$ (NOTE: It is non-decreasing), and $x_{n_K} \rightarrow L$, we have
+        \[ x_n \leq L + \epsilon \ \text{for all } n \]
+    \end{enumerate}
+    Therefore, for all $n \geq n_K$,
+    \[ L - \epsilon < x_n \leq L + \epsilon \]
+    This implies that
+    \[ |x_n - L| < \epsilon \ \text{for all } n > n_K \]
+    Therefore, by the limit definition, we have $\lim_{n \rightarrow \infty} x_n = L$. Thus, $(x_n)$ convertges to $L$.
+\end{proof}
+
+\noindent Now, lets recall Bolzano-Weierstrass Theorem and Monotone Convergence Theorem:
+\\
+\textit{Monotone Convergence Theorem: } Every bounded monotonic sequence converges.
+\\
+\textit{Bolzano-Weierstrass Theorem: } Every bounded sequence in $\mathbb{R}$ has a convergent subsequence.
+\\
+To prove MCT using Bolzano-Weierstrass Theorem and our previous result, we can approach in this way:
+\begin{proof}
+    Let $(x_n)$ be a bounded monotonic sequence. WLOG, $(x_n)$ is non-decreasing.
+    \\
+    Since $(x_n)$ is bounded, by \textit{Bolzano-Weierstrass Theorem}, there exists a convergent subsequence $(x_{n_k})$ s.t.
+    \[ \lim_{k \rightarrow \infty} x_{n_k} = L \]
+    From our previous result since $(x_n)$ is monotonic and has a converging subsequence $(x_{n_k})$, sequence $(x_n)$ converges to the same limit $L$.
+    \\
+    Therefore, every bounded monotonic sequence converges.
+\end{proof}
+
 \end{document}
