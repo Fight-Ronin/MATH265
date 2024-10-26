@@ -258,9 +258,9 @@ To prove MCT using Bolzano-Weierstrass Theorem and our previous result, referenc
     \\
     This direction is obviously true. Consider $\epsilon = 1$ for $(x_n) \rightarrow L$ (convergent sequence ).
     $\exists N_{\epsilon} \in \mathbb{N}$ s.t. $n \geq N_{\epsilon}$:
-    \[ |x_n - L| < 1 \Leftrightarrow L - 1 < x_n < L + 1 \]
+    \[ |x_n - L| < 1 \Leftrightarrow |x_n| < |L| + 1 \]
     Then we can pick a value $M$ to bound sequence $(x_n)$ as:
-    \[ M = \max \{|x_1|, \cdots, |x_{N_{\epsilon - 1}}|, |L + 1|, |L - 1|\} \]
+    \[ M = \max \{|x_1|, \cdots, |x_{N_{\epsilon - 1}}|, |L| + 1 \} \]
     Hence, $|x_n| \leq M$, a convergent monotonic sequence bounded.
 \end{proof}
 
