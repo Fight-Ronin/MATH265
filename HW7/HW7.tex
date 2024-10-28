@@ -212,24 +212,18 @@ By analyzed several terms of the given sequence, likely it is increasing and sho
     \\
     Since $(x_n)$ is monotone, it is either non-decreasing or non-increasing. Without loss of generality, suppose $(x_n)$ is non-decreasing.
     \\
-    We want to show that for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $n \geq N_{\epsilon}$:
+    We want to show that for $\epsilon > 0$, $\exists N > 0$ s.t. $n \geq N_{\epsilon}$:
     \[ L - \epsilon < x_n < L + \epsilon \]
-    First we show the left inequality of our goal: 
+    First we show the right inequality of our goal ($x_n < L + \epsilon$): 
     \\
-    Since $(x_{n_k}) \rightarrow L$, for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $k \geq N_{\epsilon}$:
-    \[ L - \epsilon  < x_{n_k} < L + \epsilon \Leftrightarrow |x_{n_k} - L| < \epsilon \Longrightarrow x_{n_k} > L - \epsilon \]
-    Because $(x_n)$ is non-decreasing, and we know $n \geq n_k$ by definiton of subsequence, we have \( x_n \geq x_{n_k} \).
-    \[ \Rightarrow x_n \geq x_{n_K} > L - \epsilon, \Rightarrow x_n > L - \epsilon \]
-    For remaining right inequality, we will prove it by contradiction:
+    Let $k > N$, then $x_k \leq x_{n_k}$. Hence, we can get:
+    \[ x_k \leq x_{n_k} < L + \epsilon \]
+    Then, we need to show the left inequality of our goal ($x_n > L - \epsilon$):
     \\
-    Assume $\exists m \in \mathbb{N}$ s.t. $x_m \geq L + \epsilon$. For $n_m \geq k$, we can have
-    \[ x_{n_{N_{\epsilon}}} \geq \cdots \geq x_{n_{m + 1}} \geq x_{n_m} \geq x_k \geq L + \epsilon \]
-    But out definition states that for $\epsilon > 0$, $\exists N_{\epsilon} > 0$ s.t. $k \geq N_{\epsilon}$, we get:
-    \[ x_{n_k} < L + \epsilon \]
-    Thus, we got a contradiction here.
-    \\
-    Combining the previous 2 cases, for all $n \geq N_{\epsilon}$,
-    \[ L - \epsilon < x_n \leq L + \epsilon \Leftrightarrow |x_n - L| < \epsilon \]
+    Let $k \geq n_N$, then $x_k \geq x_{n_N}$. Hence, we can get:
+    \[ x_k \geq x_{n_N} < L - \epsilon \]
+    Combining the previous 2 cases, choose $M := \max\{n_N, N\} = n_N$. Then for $n=k \geq M$
+    \[ L - \epsilon < x_n \leq L + \epsilon \Longrightarrow |x_n - L| < \epsilon \]
     Therefore, by definition, we have $\lim_{n \rightarrow \infty} x_n = L$. Thus, $(x_n)$ convertges to $L$.
 \end{proof}
 
